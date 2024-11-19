@@ -7,11 +7,17 @@ This repository contains the source code for a **Digital Shop Website** inspired
 ### Features
 
 - **Responsive Layout**: The website is optimized for all screen sizes, from mobile devices to large desktop monitors.
+
 - **Shop Page**: A grid of digital products with interactive hover effects and product details.
+
 - **Cart Functionality**: A custom cart system where users can add and remove products with JavaScript, allowing for dynamic interaction.
+
 - **About Us Page**: A dedicated section to display information about the business or website, including images and text.
+
 - **Blog Page**: A blog section with posts displayed in a grid layout.
+
 - **Contact Us Page**: A contact form for users to reach out, along with Google Maps integration to show the business location.
+
 - **Smooth Scrolling Animations**: Achieved using [ScrollReveal.js](https://scrollrevealjs.org/), which animates elements as the user scrolls down the page.
 
 ---
@@ -19,12 +25,17 @@ This repository contains the source code for a **Digital Shop Website** inspired
 ### Table of Contents
 
 - [Technologies Used](#technologies-used)
+
 - [Installation](#installation)
+
 - [Usage](#usage)
+
 - [Folder Structure](#folder-structure)
+
 - [Features Breakdown](#features-breakdown)
+
 - [Contributing](#contributing)
-- [License](#license)
+
 - [Acknowledgements](#acknowledgements)
 
 ---
@@ -32,10 +43,15 @@ This repository contains the source code for a **Digital Shop Website** inspired
 ### Technologies Used
 
 - **HTML**: Provides the structure and content of the website.
+
 - **CSS**: Used for styling, including layout, animations, and responsive design.
+
 - **JavaScript**: Adds interactivity, including cart functionality and handling user interactions with the page.
+
 - **ScrollReveal.js**: A JavaScript library used to add smooth scroll-based animations to the website.
+
 - **Google Maps API**: For embedding an interactive map in the Contact Us page.
+
 - **Phlox Pro Template**: A premium WordPress template that served as the foundation for the design of the website.
 
 ---
@@ -76,16 +92,6 @@ This website functions as a digital shop template and includes several key featu
   
 - **Contact Us Page**: Includes a contact form for users to submit inquiries. The form is styled with custom CSS, and the page includes Google Maps integration to show the business location.
 
-#### Cart Functionality:
-
-The **cart functionality** allows users to add products to their cart and view their total. The cart is implemented with JavaScript, where the items are dynamically added or removed. The functionality includes:
-
-- **Add to Cart**: Users can click the 'Add to Cart' button on product items, which will dynamically update the cart.
-- **View Cart**: Users can see a summary of the products they've added to the cart, along with the total price.
-- **Remove Items**: Users can remove products from their cart.
-
-You can customize the cart and product list by editing the HTML structure and JavaScript code.
-
 ---
 
 ### Folder Structure
@@ -94,7 +100,7 @@ The project is organized as follows:
 ```bash
 digital-shop-website/ 
 │
-├── index.html # Main page that contains all sections (Shop, About, Blog, Contact) 
+├── index.html # Main page that contains main contents of the page
 ├── about.html # About Us page 
 ├── blog.html # Blog page 
 ├── contact.html # Contact Us page with form and Google Maps 
@@ -108,9 +114,17 @@ digital-shop-website/
 ```
 
 - `index.html` serves as the homepage and contains references to the other pages (Shop, About Us, Blog, Contact Us).
-- `cart.js` contains the JavaScript code for cart functionality.
-- `style.css` defines the layout, design, and responsiveness of the website.
+
+- `index.css` defines the layout, design, and responsiveness of the main page.
+
+- `shop.css`  defines the layout, design, and responsiveness of the shop page.
+
+- `about.css` defines the layout, design, and responsiveness of the about page.
+
+- `contactus.css` defines the layout, design, and responsiveness of the contact us page.
+
 - `scrollreveal.min.js` is the ScrollReveal.js library used for smooth scrolling animations.
+
 - `images/` contains all the image assets used across the website.
 
 ---
@@ -118,22 +132,33 @@ digital-shop-website/
 ### Features Breakdown
 
 #### Shop Page:
+
 - Grid layout for product display.
+
 - Hover effects on product items (images and buttons).
+
 - Product images are clickable and open detailed views.
+
 - Add to Cart functionality via JavaScript.
 
 #### About Us Page:
+
 - Display company or website details in a two-column layout with images.
+
 - Text content about the business.
 
 #### Blog Page:
+
 - Blog posts are displayed in a grid format.
+
 - Each blog post includes a title, summary, and a link to read more.
 
 #### Contact Us Page:
+
 - A contact form that collects user inquiries.
+
 - Google Maps iframe showing the business location.
+
 - Form styling with custom CSS and interactive form elements.
   
 ---
@@ -143,6 +168,7 @@ digital-shop-website/
 We welcome contributions to this project! If you'd like to contribute, please follow these steps:
 
 1. **Fork the repository** to your GitHub account.
+
 2. **Clone your fork**:
 
     ```bash
@@ -174,17 +200,17 @@ We welcome contributions to this project! If you'd like to contribute, please fo
 ### Acknowledgements
 
 - [Phlox Pro Template](https://demo.phlox.pro/shop-digital/) - The template used as the foundation for the design and layout of the website.
+
 - [ScrollReveal.js](https://scrollrevealjs.org/) - For smooth scroll animations on various sections of the website.
+
 - [Google Maps API](https://developers.google.com/maps) - For integrating Google Maps in the contact section.
+
 - [Font Awesome](https://fontawesome.com/) - For the icons used throughout the website.
+
 - [W3Schools](https://www.w3schools.com/) - For providing a great platform to learn web development.
 
 ---
 
 ### Demo
 
-You can view a live demo of the website [here](#) (replace `#` with the actual link if deployed on a live server, e.g., GitHub Pages, Netlify, etc.). Alternatively, you can download the files and run them locally following the instructions above.
-
-
-
-
+You can view a live demo of the website [here](#). Alternatively, you can download the files and run them locally following the instructions above.
