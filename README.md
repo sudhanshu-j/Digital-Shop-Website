@@ -100,17 +100,25 @@ The project is organized as follows:
 ```bash
 digital-shop-website/ 
 │
-├── index.html # Main page that contains main contents of the page
-├── about.html # About Us page 
-├── blog.html # Blog page 
-├── contact.html # Contact Us page with form and Google Maps 
-├── index.css # Main stylesheet
-├── shop.css # Shop Styles
-├── about.css # About Styles
-├── blog.css # Blog Styles
-├── contactus.css # Contact Styles
-├── scrollreveal.min.js # ScrollReveal.js library for animations 
-└── images/ # Directory for images (product images, logo, etc.)
+├── index.html           # Main page that contains main contents of the page
+├── about.html           # About Us page 
+├── blog.html            # Blog page 
+├── contact.html         # Contact Us page with form and Google Maps
+├── shop.html            # Shop page
+│
+└── css/                 # Contains all css stylesheets
+│
+├── index.css            # Main stylesheet
+├── shop.css             # Shop Styles
+├── about.css            # About Styles
+├── blog.css             # Blog Styles
+├── contactus.css        # Contact Styles
+│
+└── js/                  # Conatins all the javascript file
+│
+├── index.js             # Contains the main page functionality
+├── shop.js              # Contains the shop page functionality 
+└── images/              # Directory for images (product images, logo, etc.)
 ```
 
 - `index.html` serves as the homepage and contains references to the other pages (Shop, About Us, Blog, Contact Us).
