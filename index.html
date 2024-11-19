@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Character encoding for the document -->
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Compatibility with Internet Explorer -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Responsive design for mobile devices -->
+
+    <!-- Link to Google Fonts for Montserrat and Poppins -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Link to icon styles -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.4.0/fonts/remixicon.css"
+    />
+
+    <!-- Link to custom CSS file -->
+    <link rel="stylesheet" href="css/index.css" />
+
+    <!-- Link to favicon -->
+    <link rel="icon" type="image/png" href="ic.png" />
+
+    <!-- Link to custom JavaScript file with deferred loading -->
+    <script src="js/index.js" defer></script>
+
+    <!-- Title of the webpage -->
+    <title>PHLOX-Digital-Shop</title>
+  </head>
+  <body class="home">
+    <!-- Body content goes here -->
+
+    <!-- Header -->
+    <header class="primary-header container flex">
+      <!-- Wrapper for header content with flexbox -->
+      <div class="header-inner-one flex">
+        <!-- Logo Section -->
+        <div class="logo">
+          <!-- Image element for the logo -->
+          <img src="/img/logo.png" alt="Logo" />
+        </div>
+
+        <!-- Mobile Navigation Close Button -->
+        <button
+          class="mobile-close-btn"
+          data-visible="false"
+          aria-controls="primary-navigation"
+          aria-label="Close navigation"
+        >
+          <!-- Icon for close button, using "ri-close-circle-line" from the Remix Icons library -->
+          <i class="ri-close-circle-line"></i>
+        </button>
+
+        <!-- Main Navigation -->
+        <nav class="primary-nav">
+          <ul
+            id="primary-navigation"
+            data-visible="false"
+            class="primary-navigation flex"
+          >
+            <!-- 1. Home Link -->
+            <li>
+              <a class="active fs-100 fs-montserrat bold-500" href="/index.html"
+                >Home</a
+              >
+              <!-- Active class indicates the current page, fs-100 is for font size, fs-montserrat is for the font family, and bold-500 makes the text bold -->
+            </li>
+
+            <!-- 2. Shop Link -->
+            <li>
+              <a class="fs-100 fs-montserrat bold-500" href="/shop.html"
+                >Shop</a
+              >
+            </li>
+
+            <!-- 3. About Us Link -->
+            <li>
+              <a class="fs-100 fs-montserrat bold-500" href="/about.html"
+                >About Us</a
+              >
+            </li>
+
+            <!-- 4. Blog Link -->
+            <li>
+              <a class="fs-100 fs-montserrat bold-500" href="/blog.html"
+                >Blog</a
+              >
+            </li>
+
+            <!-- 5. Contact Us Link -->
+            <li>
+              <a class="fs-100 fs-montserrat bold-500" href="/contactus.html"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Login and Cart Section -->
+      <div class="header-login flex">
+        <!-- Login Text -->
+        <p class="fs-100 fs-montserrat bold-500">Login</p>
+
+        <!-- Search Icon -->
+        <i class="ri-search-line"></i>
+
+        <!-- Cart Icon -->
+        <i
+          id="cart-box"
+          aria-controls="cart-icon"
+          class="ri-shopping-bag-line"
+        ></i>
+
+        <!-- Shopping Cart Dropdown -->
+        <div class="cart-icon" id="cart-icon" data-visible="false">
+          <div class="shopping flex">
+            <p>Shopping Basket</p>
+            <!-- Close button for the cart dropdown -->
+            <i id="close-btn" class="ri-close-line"></i>
+          </div>
+
+          <div class="cart bold-800 flex">
+            <!-- Icon for cart and message for empty cart -->
+            <i class="ri-shopping-cart-2-line"></i>
+            <p>Cart Is Empty</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Open Button -->
+      <div class="mobile-open-btn">
+        <!-- Icon for the open button (appears on mobile to open the menu) -->
+        <i class="ri-align-right"></i>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="hero-section">
+      <!-- Wrapper for the Hero content -->
+      <div>
+        <!-- Main Headline for the Hero Section -->
+        <h1 class="fs-200 fs-poppins">
+          Beats Solo
+          <!-- Wireless text with styling for emphasis, larger font size, and bold weight -->
+          <span
+            class="big-wireless block lineheight fs-300 bold-900 fs-poppins"
+          >
+            Wireless
+          </span>
+          <!-- Headphone text with more specific styles, such as white color and uppercase text -->
+          <span
+            class="span-2 text-white uppercase lineheight2 bold-bolder fs-poppins fs-900"
+          >
+            Headphone
+          </span>
+        </h1>
+
+        <!-- Product Image: Beats Solo Headphones -->
+        <img src="/img/black-headphone.png" alt="Beats Solo" />
+      </div>
+
+      <!-- Inner content section for the hero area, using flexbox layout -->
+      <div class="hero-inner flex">
+        <div>
+          <!-- Button to shop by category, styled with a red background and white text -->
+          <button class="large-btn bg-red text-white fs-poppins fs-50">
+            Shop By Category
+          </button>
+        </div>
+
+        <!-- Information Section for the Hero -->
+        <div class="hero-info">
+          <!-- Subheading for the description section -->
+          <h4 class="fs-montserrat">Description</h4>
+
+          <!-- Description text for the product -->
+          <p class="fs-montserrat">
+            Featuring a completely re-engineered acoustic architecture Improved
+            clarity and balance Personalized spatial audio.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <!-- Product Section -->
+    <section class="product-section">
+      <!-- Category 1: Earphones -->
+      <div class="category category-1 bg-black grid">
+        <div>
+          <!-- Product Heading for Earphones -->
+          <h3 class="text-white fs-50 fs-montserrat">
+            Enjoy
+            <!-- "with" emphasized in a larger font size using fs-300 and Poppins font -->
+            <span class="block fs-300 fs-poppins"> with </span>
+            <!-- "Earphone" in uppercase, bold and with line-height adjustment -->
+            <span
+              class="earphone uppercase fs-400 fs-montserrat bold-900 lineheight"
+            >
+              Earphone
+            </span>
+          </h3>
+
+          <!-- Shop Now button -->
+          <button class="product-btn large-btn text-white bg-red fs-montserrat">
+            Shop Now
+          </button>
+        </div>
+
+        <!-- Image for Earphone Product -->
+        <div class="product-img-1">
+          <img src="img/earphone.png" alt="Earphone Image" class="img-1" />
+        </div>
+      </div>
+
+      <!-- Category 2: Watches -->
+      <div class="category category-2 bg-yellow grid">
+        <div>
+          <!-- Product Heading for Gadgets -->
+          <h3 class="text-white fs-50 fs-montserrat">
+            New
+            <!-- "Wear" emphasized with fs-300 and Poppins font -->
+            <span class="block fs-300 fs-poppins"> Wear </span>
+            <!-- "Gadgets" styled with uppercase and bold, with line-height adjustment -->
+            <span
+              class="earphone watch uppercase fs-400 fs-montserrat bold-800 lineheight"
+            >
+              Gadgets
+            </span>
+          </h3>
+
+          <!-- Shop Now button -->
+          <button
+            class="product-btn large-btn text-yellow bg-white fs-montserrat"
+          >
+            Shop Now
+          </button>
+        </div>
+
+        <!-- Image for Watch Product -->
+        <div class="product-img-1 product-img-2">
+          <img src="img/watch.png" alt="Watch Image" class="img-2" />
+        </div>
+      </div>
+
+      <!-- Category 3: Laptops -->
+      <div class="category category-3 bg-red grid">
+        <div>
+          <!-- Product Heading for Laptops -->
+          <h3 class="text-white fs-50 fs-montserrat">
+            Trend
+            <!-- "Devices" emphasized in fs-300 and Poppins font -->
+            <span class="block fs-300 fs-poppins"> Devices </span>
+            <!-- "Laptop" in uppercase, bold, and with line-height adjustment -->
+            <span
+              class="earphone uppercase fs-400 fs-montserrat bold-900 lineheight"
+            >
+              Laptop
+            </span>
+          </h3>
+
+          <!-- Shop Now button -->
+          <button class="product-btn large-btn text-red bg-white fs-montserrat">
+            Shop Now
+          </button>
+        </div>
+
+        <!-- Image for Laptop Product -->
+        <div class="product-img-3 product-img-1">
+          <img src="img/Laptop.png" alt="Laptop Image" class="img-3" />
+        </div>
+      </div>
+
+      <!-- Category 4: Gaming Consoles -->
+      <div class="category category-4 bg-gray grid">
+        <div>
+          <!-- Product Heading for Gaming Consoles -->
+          <h3 class="text-black fs-50 fs-montserrat">
+            Best
+            <!-- "Gaming" emphasized with fs-300 and Poppins font -->
+            <span class="block fs-300 fs-poppins"> Gaming </span>
+            <!-- "Console" in uppercase, bold, and with line-height adjustment -->
+            <span
+              class="earphone uppercase fs-400 fs-montserrat bold-900 lineheight"
+            >
+              Console
+            </span>
+          </h3>
+
+          <!-- Shop Now button -->
+          <button class="product-btn large-btn text-white bg-red fs-montserrat">
+            Shop Now
+          </button>
+        </div>
+
+        <!-- Image for Gaming Console Product -->
+        <div class="product-img-4 product-img-1">
+          <img src="img/ps-4.png" alt="Gaming Console Image" class="img-4" />
+        </div>
+      </div>
+
+      <!-- Category 5: Virtual Reality (Oculus) -->
+      <div class="category category-5 bg-green grid">
+        <div>
+          <!-- Product Heading for Oculus VR -->
+          <h3 class="text-white fs-50 fs-montserrat">
+            Play
+            <!-- "Game" emphasized with fs-300 and Poppins font -->
+            <span class="block fs-300 fs-poppins"> Game </span>
+            <!-- "Oculus" in uppercase, bold, and with line-height adjustment -->
+            <span
+              class="earphone uppercase fs-400 fs-montserrat bold-900 lineheight"
+            >
+              Oculus
+            </span>
+          </h3>
+
+          <!-- Shop Now button -->
+          <button
+            class="product-btn large-btn text-green bg-white fs-montserrat"
+          >
+            Shop Now
+          </button>
+        </div>
+
+        <!-- Image for Oculus VR Product -->
+        <div class="product-img-5 product-img-1">
+          <img src="img/VR.png" alt="Oculus VR Image" class="img-5" />
+        </div>
+      </div>
+
+      <!-- Category 6: Amazon Speakers -->
+      <div class="category category-6 bg-blue grid">
+        <div>
+          <!-- Product Heading for Amazon Speakers -->
+          <h3 class="text-white fs-50 fs-montserrat">
+            New
+            <!-- "Amazon" emphasized with fs-300 and Poppins font -->
+            <span class="block fs-300 fs-poppins"> Amazon </span>
+            <!-- "Speaker" in uppercase, bold, and with line-height adjustment -->
+            <span
+              class="earphone uppercase fs-400 fs-montserrat bold-900 lineheight"
+            >
+              Speaker
+            </span>
+          </h3>
+
+          <!-- Shop Now button -->
+          <button
+            class="product-btn large-btn text-blue bg-white fs-montserrat"
+          >
+            Shop Now
+          </button>
+        </div>
+
+        <!-- Image for Amazon Speaker Product -->
+        <div class="product-img-6 product-img-1">
+          <img src="img/speaker.png" alt="Amazon Speaker Image" class="img-6" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Section -->
+    <section class="service-section">
+      <!-- 1: Free Shipping Service -->
+      <div class="service">
+        <!-- Image for Free Shipping Service -->
+        <img src="/image/free.svg" alt="Service Image" class="service-img" />
+
+        <!-- Service Information -->
+        <div class="service-info">
+          <!-- Service Title: "Free Shipping" with larger font size for "Free" -->
+          <h3><span class="fs-200 fs-poppins">Free</span> Shipping</h3>
+          <!-- Service Description -->
+          <p class="fs-montserrat fs-50">
+            Get free shipping on orders over $99.00.
+          </p>
+        </div>
+      </div>
+
+      <!-- 2: Return Policy Service -->
+      <div class="service">
+        <!-- Image for Return Policy Service -->
+        <img src="/image/sett.svg" alt="Service Image" class="service-img" />
+
+        <!-- Service Information -->
+        <div class="service-info">
+          <!-- Service Title: "Return Policy" with larger font size for "Return" -->
+          <h3><span class="fs-200 fs-poppins">Return</span> Policy</h3>
+          <!-- Service Description -->
+          <p class="fs-montserrat fs-50">
+            We accept returns within 30 days of purchase.
+          </p>
+        </div>
+      </div>
+
+      <!-- 3: Customer Support Service -->
+      <div class="service">
+        <!-- Image for Customer Support Service -->
+        <img src="/image/supt.svg" alt="Service Image" class="service-img" />
+
+        <!-- Service Information -->
+        <div class="service-info">
+          <!-- Service Title: "Customer Support" with larger font size for "Customer" -->
+          <h3><span class="fs-200 fs-poppins">Customer</span> Support</h3>
+          <!-- Service Description -->
+          <p class="fs-montserrat fs-50">Live chat and email support 24/7.</p>
+        </div>
+      </div>
+
+      <!-- 4: Refund Policy Service -->
+      <div class="service">
+        <!-- Image for Refund Policy Service -->
+        <img src="/image/pay.svg" alt="Service Image" class="service-img" />
+
+        <!-- Service Information -->
+        <div class="service-info">
+          <!-- Service Title: "Refund Policy" with larger font size for "Refund" -->
+          <h3><span class="fs-200 fs-poppins">Refund</span> Policy</h3>
+          <!-- Service Description -->
+          <p class="fs-montserrat fs-50">
+            We offer full refunds within 7 days of purchase.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature Section 1 -->
+    <section class="feature-section bg-red">
+      <!-- Grid layout for featured product section -->
+      <div class="feature-one grid">
+        <!-- Featured Image -->
+        <img
+          src="img/red-headphone.png"
+          alt="Featured Image"
+          class="img-1 feature-image"
+        />
+
+        <!-- Discount label "20% OFF" -->
+        <p class="text-white uppercase">20% OFF</p>
+
+        <!-- Product Title with special styling for the word "Smile" -->
+        <p
+          class="font-size lineheight fs-500 lineheight2 text-white fs-poppins bold-900 uppercase"
+        >
+          Fine <span class="smile">Smile</span>
+        </p>
+
+        <!-- Sale Dates -->
+        <p class="date text-white fs-poppins fs-50 lineheight">
+          15 Nov To 31 Dec
+        </p>
+      </div>
+
+      <!-- Feature Information Section -->
+      <div class="feature-info">
+        <!-- Main Product Name -->
+        <h2 class="fs-200 text-white fs-poppins bold-500">Beats Solo Air</h2>
+
+        <!-- Subheading for Sale Event -->
+        <p class="fs-poppins fs-300 bold-800 text-white">Winter Sale</p>
+
+        <!-- Product Description -->
+        <p class="fs-montserrat text-white fs-50">
+          Beats Solo Air features a sleek, stylish design with a sleek, stylish
+          build.
+        </p>
+
+        <!-- Call to Action Button -->
+        <button class="product-btn large-btn text-red bg-white fs-poppins">
+          Shop Now
+        </button>
+      </div>
+    </section>
+
+    <!-- Best Seller Products Heading -->
+    <section class="best-product container">
+      <!-- Section Heading: Best Seller Products -->
+      <h2 class="letter-spacing bold-bolder fs-300 fs-poppins">
+        Best Seller Products
+      </h2>
+
+      <!-- Section Description -->
+      <p class="fs-montserrat fs-100">
+        We are offering the best-selling products from our wide range of
+        products. Click on the product images to see more details. 10% off on
+        selected items. Enjoy your shopping!
+      </p>
+    </section>
+
+    <!-- Best-Seller Section -->
+    <section class="best-seller">
+      <!-- Product 1 -->
+      <div class="product product-1 grid">
+        <!-- Product Image -->
+        <img src="img/prod-1.jpg" alt="Beat Seller image" class="img-1" />
+
+        <!-- Product Name -->
+        <p class="fs-poppins bold-500">Smartwatch 2.0 LTE Wifi</p>
+
+        <!-- Product Price -->
+        <p class="fs-poppins bold-500">$129.99</p>
+
+        <!-- Product Purchase Controls -->
+        <div class="product-details grid bg-red">
+          <!-- Shopping Cart Icon (Add to Cart) -->
+          <i class="text-white ri-shopping-cart-2-line"></i>
+          <!-- Heart Icon (Add to Wishlist) -->
+          <i class="text-white ri-heart-2-line"></i>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product product-2 grid">
+        <!-- Product Image -->
+        <img src="img/prod-2.jpg" alt="Beat Seller image" class="img-1" />
+
+        <!-- Product Name -->
+        <p class="fs-poppins bold-500">Beats Headphone</p>
+
+        <!-- Product Price -->
+        <p class="fs-poppins bold-500">$109.99</p>
+
+        <!-- Product Purchase Controls -->
+        <div class="product-details grid bg-red">
+          <!-- Shopping Cart Icon (Add to Cart) -->
+          <i class="text-white ri-shopping-cart-2-line"></i>
+          <!-- Heart Icon (Add to Wishlist) -->
+          <i class="text-white ri-heart-2-line"></i>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product product-3 grid">
+        <!-- Product Image -->
+        <img src="img/prod-3.jpg" alt="Beat Seller image" class="img-1" />
+
+        <!-- Product Name -->
+        <p class="fs-poppins bold-500">Wireless Audio System Multiroom 360</p>
+
+        <!-- Product Price -->
+        <p class="fs-poppins bold-500">$109.99</p>
+
+        <!-- Product Purchase Controls -->
+        <div class="product-details grid bg-red">
+          <!-- Shopping Cart Icon (Add to Cart) -->
+          <i class="text-white ri-shopping-cart-2-line"></i>
+          <!-- Heart Icon (Add to Wishlist) -->
+          <i class="text-white ri-heart-2-line"></i>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="product product-4 grid">
+        <!-- Product Image -->
+        <img src="img/prod-4.jpg" alt="Beat Seller image" class="img-1" />
+
+        <!-- Product Name -->
+        <p class="fs-poppins bold-500">Gore Wear C7</p>
+
+        <!-- Product Price -->
+        <p class="fs-poppins bold-500">$129.99</p>
+
+        <!-- Product Purchase Controls -->
+        <div class="product-details grid bg-red">
+          <!-- Shopping Cart Icon (Add to Cart) -->
+          <i class="text-white ri-shopping-cart-2-line"></i>
+          <!-- Heart Icon (Add to Wishlist) -->
+          <i class="text-white ri-heart-2-line"></i>
+        </div>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="product product-5 grid">
+        <!-- Product Image -->
+        <img src="img/prod-5.jpg" alt="Beat Seller image" class="img-1" />
+
+        <!-- Product Name -->
+        <p class="fs-poppins bold-500">White EliteBook Laptop 810</p>
+
+        <!-- Product Price -->
+        <p class="fs-poppins bold-500">$599.99</p>
+
+        <!-- Product Purchase Controls -->
+        <div class="product-details grid bg-red">
+          <!-- Shopping Cart Icon (Add to Cart) -->
+          <i class="text-white ri-shopping-cart-2-line"></i>
+          <!-- Heart Icon (Add to Wishlist) -->
+          <i class="text-white ri-heart-2-line"></i>
+        </div>
+      </div>
+
+      <!-- Product 6 -->
+      <div class="product product-6 grid">
+        <!-- Product Image -->
+        <img src="img/prod-6.jpg" alt="Beat Seller image" class="img-1" />
+
+        <!-- Product Name -->
+        <p class="fs-poppins bold-500">Rocky Mountain Headphone</p>
+
+        <!-- Product Price -->
+        <p class="fs-poppins bold-500">$129.99</p>
+
+        <!-- Product Purchase Controls -->
+        <div class="product-details grid bg-red">
+          <!-- Shopping Cart Icon (Add to Cart) -->
+          <i class="text-white ri-shopping-cart-2-line"></i>
+          <!-- Heart Icon (Add to Wishlist) -->
+          <i class="text-white ri-heart-2-line"></i>
+        </div>
+      </div>
+
+      <!-- Product 7 -->
+      <div class="product product-7 grid">
+        <!-- Product Image -->
+        <img src="img/prod-7.jpg" alt="Beat Seller image" class="img-1" />
+
+        <!-- Product Name -->
+        <p class="fs-poppins bold-500">Wireless Audio System</p>
+
+        <!-- Product Price -->
+        <p class="fs-poppins bold-500">$399.99</p>
+
+        <!-- Product Purchase Controls -->
+        <div class="product-details grid bg-red">
+          <!-- Shopping Cart Icon (Add to Cart) -->
+          <i class="text-white ri-shopping-cart-2-line"></i>
+          <!-- Heart Icon (Add to Wishlist) -->
+          <i class="text-white ri-heart-2-line"></i>
+        </div>
+      </div>
+
+      <!-- Product 8 -->
+      <div class="product product-8 grid">
+        <!-- Product Image -->
+        <img src="img/prod-8.jpg" alt="Beat Seller image" class="img-1" />
+
+        <!-- Product Name -->
+        <p class="fs-poppins bold-500">Game Console Controller Cable</p>
+
+        <!-- Product Price -->
+        <p class="fs-poppins bold-500">$599.99</p>
+
+        <!-- Product Purchase Controls -->
+        <div class="product-details grid bg-red">
+          <!-- Shopping Cart Icon (Add to Cart) -->
+          <i class="text-white ri-shopping-cart-2-line"></i>
+          <!-- Heart Icon (Add to Wishlist) -->
+          <i class="text-white ri-heart-2-line"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature Section 2 -->
+    <section class="feature-section feature-section-2 bg-green">
+      <!-- Feature Image and Promotion Info -->
+      <div class="feature-one grid">
+        <!-- Image of the featured product -->
+        <img
+          src="img/green-watch.png"
+          alt="Featured Image"
+          class="img-2 feature-image"
+        />
+
+        <!-- Discount Info -->
+        <p class="text-white uppercase">20% OFF</p>
+
+        <!-- Main Promotion Title with emphasis on the word 'Smile' -->
+        <p
+          class="font-size lineheight fs-500 lineheight2 text-white fs-poppins bold-900 uppercase"
+        >
+          Fine <span class="smile">Smile</span>
+        </p>
+
+        <!-- Sale Duration Info -->
+        <p class="date text-white fs-poppins fs-50 lineheight">
+          15 Nov To 31 Dec
+        </p>
+      </div>
+
+      <!-- Product Info and Call to Action -->
+      <div class="feature-info">
+        <!-- Product Title -->
+        <h2 class="fs-200 text-white fs-poppins bold-500">Green SmartWatch</h2>
+
+        <!-- Promotional Subtitle -->
+        <p class="fs-poppins fs-300 bold-800 text-white">Winter Sale</p>
+
+        <!-- Product Description -->
+        <p class="fs-montserrat text-white fs-50">
+          Green SmartWatch features a sleek, stylish design with a sleek,
+          stylish build.
+        </p>
+
+        <!-- Call to Action Button -->
+        <button class="product-btn large-btn text-green bg-white fs-poppins">
+          Shop Now
+        </button>
+      </div>
+    </section>
+
+    <!-- News Section Heading -->
+    <section class="best-product container">
+      <!-- Section Title -->
+      <h2 class="letter-spacing bold-bolder fs-300 fs-poppins">Recent News</h2>
+
+      <!-- Section Description -->
+      <p class="fs-montserrat fs-100">
+        We are sharing the latest news from our wide range of products. Click on
+        the product images to see more details. 10% off on selected items. Enjoy
+        your shopping!
+      </p>
+    </section>
+
+    <!-- News Section -->
+    <section class="recent-news grid">
+      <!-- 1 -->
+      <div class="news grid">
+        <!-- Image of the news article -->
+        <img src="/image/news-1.png" alt="News image" class="img-3" />
+
+        <!-- Date and author information -->
+        <div class="fs-montserrat fs-100 padding-inline flex n-date">
+          <!-- The publication date of the article -->
+          <p>October 15, 2024</p>
+          <!-- The author of the article -->
+          <p>by ecomstory</p>
+        </div>
+
+        <!-- Title of the news article -->
+        <h2 class="fs-poppins padding-inline fs-200 bold-600 n-ques">
+          How to choose correct gadget for yourself
+        </h2>
+
+        <!-- A brief description or teaser about the news article -->
+        <p class="desc fs-montserrat padding-inline fs-100">
+          Choose the right gadget for yourself based on your budget,
+          preferences, and needs. This guide will help you find the perfect
+          gadget for your needs....
+        </p>
+      </div>
+
+      <!-- 2 -->
+      <div class="news grid">
+        <!-- Image of the second news article -->
+        <img src="/image/news-2.png" alt="News image" class="img-3" />
+
+        <!-- Date and author information for the second article -->
+        <div class="fs-montserrat fs-100 padding-inline flex n-date">
+          <!-- The publication date of the article -->
+          <p>September 10, 2024</p>
+          <!-- The author of the article -->
+          <p>by ecomstory</p>
+        </div>
+
+        <!-- Title of the second news article -->
+        <h2 class="fs-poppins padding-inline fs-200 bold-600 n-ques">
+          Top 10 best gadgets for home improvement
+        </h2>
+
+        <!-- A brief description or teaser about the second article -->
+        <p class="desc fs-montserrat padding-inline fs-100">
+          Our top 10 best gadgets for home improvement. Read reviews, compare
+          prices, and make a decision. This list will help you find the perfect
+          gadget for your needs....
+        </p>
+      </div>
+
+      <!-- 3 -->
+      <div class="news grid">
+        <!-- Image of the third news article -->
+        <img src="/image/news-1.png" alt="News image" class="img-3" />
+
+        <!-- Date and author information for the third article -->
+        <div class="fs-montserrat fs-100 padding-inline flex n-date">
+          <!-- The publication date of the article -->
+          <p>August 15, 2024</p>
+          <!-- The author of the article -->
+          <p>by ecomstory</p>
+        </div>
+
+        <!-- Title of the third news article -->
+        <h2 class="fs-poppins padding-inline fs-200 bold-600 n-ques">
+          Top 10 best gadgets for personal growth
+        </h2>
+
+        <!-- A brief description or teaser about the third article -->
+        <p class="desc fs-montserrat padding-inline fs-100">
+          Our top 10 best gadgets for personal growth. Read reviews, compare
+          prices, and make a decision. This list will help you find the perfect
+          gadget for your needs....
+        </p>
+      </div>
+
+      <!-- 4 -->
+      <div class="news grid">
+        <!-- Image of the fourth news article -->
+        <img src="/image/news-1.png" alt="News image" class="img-3" />
+
+        <!-- Date and author information for the fourth article -->
+        <div class="fs-montserrat fs-100 padding-inline flex n-date">
+          <!-- The publication date of the article -->
+          <p>August 15, 2024</p>
+          <!-- The author of the article -->
+          <p>by ecomstory</p>
+        </div>
+
+        <!-- Title of the fourth news article -->
+        <h2 class="fs-poppins padding-inline fs-200 bold-600 n-ques">
+          Top 10 best gadgets for personal growth
+        </h2>
+
+        <!-- A brief description or teaser about the fourth article -->
+        <p class="desc fs-montserrat padding-inline fs-100">
+          Our top 10 best gadgets for personal growth. Read reviews, compare
+          prices, and make a decision. This list will help you find the perfect
+          gadget for your needs....
+        </p>
+      </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section class="brands grid">
+      <!-- 1 -->
+      <div class="brand1">
+        <!-- Image of the first brand logo -->
+        <img src="/image/br-1.png" alt="Brands Logo" class="brand-1" />
+      </div>
+
+      <!-- 2 -->
+      <div class="brand2">
+        <!-- Image of the second brand logo -->
+        <img src="/image/br-2.png" alt="Brands Logo" class="brand-2" />
+      </div>
+
+      <!-- 3 -->
+      <div class="brand3">
+        <!-- Image of the third brand logo -->
+        <img src="/image/br-3.png" alt="Brands Logo" class="brand-3" />
+      </div>
+
+      <!-- 4 -->
+      <div class="brand4">
+        <!-- Image of the fourth brand logo -->
+        <img src="/image/br-4.png" alt="Brands Logo" class="brand-4" />
+      </div>
+
+      <!-- 5 -->
+      <div class="brand5">
+        <!-- Image of the fifth brand logo -->
+        <img src="/image/br-5.png" alt="Brands Logo" class="brand-5" />
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer grid">
+      <!-- Footer Logo and Description -->
+      <div class="footer-logo grid">
+        <!-- Logo image of the company -->
+        <img src="img/logo.png" alt="Logo" />
+
+        <!-- Short company description -->
+        <p class="desc fs-montserrat fs-100">
+          Our company is dedicated to providing the best products and services
+          in the electronics industry.
+        </p>
+
+        <!-- Social media links -->
+        <div class="social flex">
+          <!-- Facebook -->
+          <a href="#">
+            <i class="ri-facebook-box-fill"></i>
+          </a>
+
+          <!-- Twitter -->
+          <a href="#">
+            <i class="ri-twitter-x-fill"></i>
+          </a>
+
+          <!-- Instagram -->
+          <a href="#">
+            <i class="ri-instagram-fill"></i>
+          </a>
+
+          <!-- Youtube -->
+          <a href="#">
+            <i class="ri-youtube-fill"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Footer Navigation Links -->
+      <div class="footer-menu grid">
+        <h3 class="fs-poppins fs-200 bold-800">Quick Links</h3>
+
+        <ul>
+          <!-- Home Link -->
+          <li>
+            <a href="/index.html" class="fs-montserrat text-black fs-100">
+              Home
+            </a>
+          </li>
+
+          <!-- About Us Link -->
+          <li>
+            <a href="/about.html" class="fs-montserrat text-black fs-100">
+              About Us
+            </a>
+          </li>
+
+          <!-- Products Link -->
+          <li>
+            <a href="/products.html" class="fs-montserrat text-black fs-100">
+              Products
+            </a>
+          </li>
+
+          <!-- Contact Us Link -->
+          <li>
+            <a href="/contact.html" class="fs-montserrat text-black fs-100">
+              Contact Us
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contact Information Section -->
+      <div class="contact grid">
+        <h3 class="fs-poppins fs-200 bold-800">Contact Us</h3>
+
+        <ul>
+          <!-- Email -->
+          <li>
+            <a
+              href="mailto:info@example.com"
+              class="fs-montserrat text-black fs-100"
+            >
+              info@example.com
+            </a>
+          </li>
+
+          <!-- Phone number -->
+          <li>
+            <a href="tel:+1234567890" class="fs-montserrat text-black fs-100">
+              +1 234 567 890
+            </a>
+          </li>
+
+          <!-- Address -->
+          <li>
+            <p class="fs-montserrat fs-100">123 Main St, City, State, Zip</p>
+          </li>
+
+          <!-- Privacy Policy Link -->
+          <li>
+            <a href="#" class="fs-montserrat text-black fs-100">
+              Privacy Policy
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Email Subscription Section -->
+      <div class="email grid">
+        <h3 class="fs-poppins fs-200 bold-800">Subscribe to Email Updates</h3>
+
+        <!-- Update description -->
+        <p class="fs-poppins updates fs-300 bold-800">
+          Stay up to date with our latest news and offers
+        </p>
+
+        <!-- Email input field and Subscribe button -->
+        <div class="inputField flex bg-gray">
+          <!-- Email input field -->
+          <input
+            type="email"
+            placeholder="Enter your email"
+            class="fs-montserrat bg-gray"
+          />
+          <!-- Subscribe button -->
+          <button class="submitBtn bg-red text-white fs-poppins fs-50">
+            Subscribe
+          </button>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Copy -->
+    <section class="copyright">
+      <!-- Copyright text -->
+      <p class="c-font fs-montserrat fs-100 text-center">
+        © 2024 ecomstory. All rights reserved.
+      </p>
+
+      <!-- Privacy Policy and Terms links -->
+      <p class="fs-montserrat fs-50 text-align p-top">
+        <a href="#">Privacy Policy</a> . <a href="#">Terms & Conditions</a>
+      </p>
+    </section>
+
+    <!-- ScrollReveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+  </body>
+</html>

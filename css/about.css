@@ -1,0 +1,111 @@
+/* About Section Styling */
+
+/* Styles for the general layout of the about section */
+.about-section {
+  width: 90vw; /* Sets the width to 90% of the viewport width */
+  margin-inline: auto; /* Centers the section horizontally by adding automatic left and right margins */
+  margin-block: 4rem; /* Adds 4rem margin to the top and bottom of the section */
+  grid-template-areas:
+    "one" /* Defines the grid layout with one single area for child elements (initial setup) */
+    "two"; /* Defines a second area for another child element */
+}
+
+/* Styles for the first child of the about section (grid item) */
+.about-section:nth-child(1) {
+  grid-area: one; /* Assigns the first child to the 'one' grid area */
+}
+
+/* Styles for the second child of the about section (grid item) */
+.about-section:nth-child(2) {
+  grid-area: two; /* Assigns the second child to the 'two' grid area */
+}
+
+/* Styles for images inside the about section */
+.about-section > * img {
+  border-radius: 2rem; /* Rounds the corners of the image by 2rem */
+  margin-bottom: 2rem; /* Adds 2rem margin to the bottom of the image */
+}
+
+/* Styles for the about-info section inside the about section */
+.about-info {
+  padding-inline: 0.5rem; /* Adds 0.5rem padding to the left and right of the about-info section */
+}
+
+/* Styles for the heading inside the about-info section */
+.about-info > h1 {
+  font-size: 2.2rem; /* Sets font size to 2.2rem for the main heading */
+  margin-bottom: 0.8rem; /* Adds 0.8rem margin to the bottom of the heading */
+}
+
+/* Styles for paragraphs inside the about-info section */
+.about-info > p {
+  line-height: 1.3rem; /* Sets line-height to 1.3rem for readability */
+}
+
+/* Styles for the button inside the about section */
+.about-btn {
+  margin-top: 3rem; /* Adds 3rem margin to the top of the button */
+}
+
+/* Media Query for Tablet Screens (between 40em and 59em) */
+@media screen and (min-width: 40em) and (max-width: 59em) {
+  /* Applies styles specifically for tablets */
+
+  /* Adjusts the layout of the about section for tablets */
+  .about-section {
+    grid-auto-columns: 1fr; /* Defines columns in the grid layout to be flexible (1 fraction of available space) */
+    grid-template-areas: "one two"; /* Defines a 2-column layout for grid areas */
+    --grid-gap: 2rem; /* Sets a gap of 2rem between grid items */
+    align-items: center; /* Centers items vertically in the grid */
+  }
+
+  /* Adjusts the layout of the about-info section for tablets */
+  .about-info {
+    display: grid; /* Changes the layout of the about-info section to a grid */
+    place-content: center; /* Centers content inside the grid */
+  }
+
+  /* Adjusts font size of h3 heading in about-info section for tablets */
+  .about-info > h3 {
+    font-size: rem; /* This line seems incomplete; the value for font-size is missing */
+  }
+
+  /* Adjusts font size of h1 heading in about-info section for tablets */
+  .about-info > h1 {
+    font-size: 1.8rem; /* Reduces the font size of the h1 heading to 1.8rem on tablets */
+  }
+
+  /* Adjusts font size of paragraph text in about-info section for tablets */
+  .about-info p {
+    font-size: 0.8rem; /* Sets font size to 0.8rem for paragraphs on tablets */
+  }
+
+  /* Removes top margin from the about-btn for tablets */
+  .about-btn {
+    margin-top: 0; /* Removes the margin-top for the button */
+  }
+}
+
+/* Media Query for Desktop Screens (min-width of 60em and above) */
+@media screen and (min-width: 60em) {
+  /* Applies styles specifically for desktop */
+
+  /* Adjusts the layout of the about section for desktop */
+  .about-section {
+    grid-auto-columns: 1fr; /* Defines columns in the grid layout to be flexible (1 fraction of available space) */
+    grid-template-areas: "two one"; /* Switches the order of grid areas, placing 'two' first and 'one' second */
+    --grid-gap: 3rem; /* Sets a gap of 3rem between grid items */
+    align-items: center; /* Centers items vertically in the grid */
+  }
+
+  /* Adjusts the layout of the about-info section for desktop */
+  .about-info {
+    display: grid; /* Changes the layout of the about-info section to a grid */
+    place-content: center; /* Centers content inside the grid */
+  }
+
+  /* Adjusts font size of h3 heading in about-info section for desktop */
+  .about-info h3 {
+    font-size: 1.2rem; /* Sets font size of the h3 heading to 1.2rem on desktop */
+  }
+}

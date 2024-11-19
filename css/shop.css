@@ -1,0 +1,307 @@
+/* General Styles */
+
+/* Adds horizontal padding of 0.5rem */
+.margin {
+  padding-inline: 0.5rem;
+}
+
+/* Makes button cursor a pointer (indicating it's clickable) */
+button {
+  cursor: pointer;
+}
+
+/* Makes <i> (icon) elements also have a pointer cursor */
+i {
+  cursor: pointer;
+}
+
+/* Shop Feature Section */
+
+/* Styles for the shop feature section with full viewport width and centered items */
+.shop-feature {
+  width: 100vw; /* Full viewport width */
+  place-items: center; /* Centers items both horizontally and vertically */
+  padding: 3rem 0; /* Adds padding of 3rem to top and bottom */
+}
+
+/* Shop container section with 90% width and auto horizontal margin */
+.shop-container {
+  width: 90vw; /* 90% of viewport width */
+  margin-inline: auto; /* Centers the container horizontally */
+  margin-block: 2rem; /* Adds 2rem margin at the top and bottom */
+}
+
+/* Shop title section with space-between for child elements */
+.shop-title {
+  justify-content: space-between; /* Distributes items with space between */
+  align-items: center; /* Aligns items vertically at the center */
+}
+
+/* Styles for select element inside shop title */
+.shop-title select {
+  padding: 0.5rem; /* Adds padding inside the select element */
+  border-radius: 2rem; /* Rounds the corners of the select element */
+}
+
+/* Shop Product Section */
+
+/* Adds margin to top and bottom of each shop product section */
+.shop-product {
+  margin-block: 2rem; /* Adds 2rem margin at top and bottom */
+}
+
+/* Styles for the product list item */
+.product-list {
+  overflow: hidden; /* Hides overflow content */
+  cursor: pointer; /* Changes cursor to pointer when hovered */
+  margin-bottom: 1rem; /* Adds 1rem margin to bottom */
+  position: relative; /* Allows positioning of child elements */
+}
+
+/* Changes color and adds hover/focus effects to product list */
+.product-list:hover,
+.product-list:focus {
+  color: hsl(var(--clr-red)); /* Changes color to red on hover or focus */
+}
+
+/* Styles for images inside product list */
+.product-list img {
+  border-radius: 1rem; /* Rounds corners of images */
+}
+
+/* Shop button container that will animate on hover */
+.shop-btn {
+  align-items: center; /* Vertically centers the button */
+  --flex-gap: 3rem; /* Sets gap between flex items */
+  transform: translateX(-40%); /* Moves the button left by 40% */
+  transition: transform 0.3s ease-in-out; /* Smooth animation for the transform */
+  cursor: pointer; /* Changes cursor to pointer when hovered */
+}
+
+/* Moves the button back to its original position when the product list is hovered */
+.product-list:hover .shop-btn {
+  transform: translateX(0); /* Resets button position */
+}
+
+/* Styles for the button inside the shop button container */
+.shop-btn > button {
+  border: 0; /* Removes button border */
+  padding: 0.5rem 1rem; /* Adds padding inside the button */
+  border-radius: 2rem; /* Rounds the corners of the button */
+}
+
+/* Pop Up Section */
+
+/* Positioning and styling for pop-up notifications */
+.pop-up {
+  position: absolute; /* Positioning it absolutely */
+  top: 1rem; /* Moves pop-up 1rem from the top of its parent */
+  left: 1rem; /* Moves pop-up 1rem from the left of its parent */
+  background-color: hsl(var(--clr-red)); /* Red background color */
+  border-radius: 50%; /* Makes it circular */
+  padding: 0.7rem; /* Adds padding inside the pop-up */
+  color: hsl(var(--clr-white)); /* Sets text color to white */
+}
+
+/* Styles for text inside the pop-up */
+.pop-up p {
+  font-size: 0.7rem; /* Sets font size of pop-up text */
+}
+
+/* Assigning grid areas for different shop products */
+.shop-product:nth-child(1) {
+  grid-area: one;
+}
+
+.shop-product:nth-child(2) {
+  grid-area: two;
+}
+
+.shop-product:nth-child(3) {
+  grid-area: three;
+}
+
+.shop-product:nth-child(4) {
+  grid-area: four;
+}
+
+.shop-product:nth-child(5) {
+  grid-area: five;
+}
+
+.shop-product:nth-child(6) {
+  grid-area: six;
+}
+
+.shop-product:nth-child(7) {
+  grid-area: seven;
+}
+
+.shop-product:nth-child(8) {
+  grid-area: eight;
+}
+
+.shop-product:nth-child(9) {
+  grid-area: nine;
+}
+
+/* Media Queries */
+
+/* Ipad - Targeting screen sizes between 35em and 59em (tablets) */
+@media screen and (min-width: 35em) and (max-width: 59em) {
+  /* Adjusts the grid layout of shop products for tablets */
+  .shop-product {
+    grid-template-areas:
+      "one two"
+      "three four"
+      "five six"
+      "seven eight"; /* Creates a 4x2 grid layout */
+  }
+
+  /* Adjusts the position of the shop button on hover for tablets */
+  .shop-btn {
+    transform: translateX(-45%); /* Moves the button left by 45% */
+  }
+}
+
+/* Desktop - Targeting screen sizes larger than 59em (desktops) */
+@media screen and (min-width: 59em) {
+  /* Shop container layout with two columns for desktop */
+  .shop-container {
+    grid-auto-columns: 1fr; /* Sets grid columns to auto for each item */
+    grid-template-columns: auto 20vw; /* Defines a 2-column layout */
+    --grid-gap: 2rem; /* Sets the gap between items to 2rem */
+  }
+
+  /* First child in the shop container takes the first column */
+  .shop-container > *:first-child {
+    grid-column: 1; /* Places the first child in the first column */
+  }
+
+  /* Last child in the shop container takes the second column */
+  .shop-container > *:last-child {
+    grid-column: 2; /* Places the last child in the second column */
+  }
+
+  /* Adjusts the grid layout of the shop products for desktop */
+  .shop-product {
+    grid-template-areas:
+      "one two three"
+      "four five six"
+      "seven eight nine"; /* Creates a 3x3 grid layout */
+  }
+
+  /* Adjusts the font size of product titles for desktop */
+  .shop-product > h3 {
+    font-size: 1rem; /* Sets font size to 1rem */
+  }
+
+  /* Adds padding to the sidebar search for desktop */
+  .sidebar-search {
+    padding-inline: 1rem; /* Adds horizontal padding */
+  }
+
+  /* Adjusts font size of category list title */
+  .category-list > h3 {
+    font-size: 1rem; /* Sets font size to 1rem */
+  }
+
+  /* Adjusts the position of the shop button on hover for desktop */
+  .shop-btn {
+    transform: translateX(-50%); /* Moves the button left by 50% */
+  }
+}
+
+/* Sidebar Search Section */
+
+/* Sidebar search box with rounded corners and centered content */
+.sidebar-search {
+  border-radius: 2rem; /* Rounds the corners */
+  align-items: center; /* Centers the items inside */
+  margin-bottom: 2rem; /* Adds margin to the bottom */
+}
+
+/* Styles for input fields in sidebar search */
+.sidebar-search input {
+  padding: 1rem 0.5rem; /* Adds padding inside the input */
+  width: 80%; /* Sets the input field width to 80% */
+  border: none; /* Removes border */
+  border-radius: 2rem; /* Rounds the corners of the input */
+}
+
+/* Removes outline when input is focused */
+.sidebar-search input:focus {
+  outline: none;
+}
+
+/* Adds padding to the text input */
+.sidebar-search input[type="text"] {
+  padding-inline: 2rem; /* Adds padding to the left and right */
+}
+
+/* Styles for icon inside the sidebar search */
+.sidebar-search > * i {
+  padding: 0.9rem; /* Adds padding to the icon */
+  font-size: 1rem; /* Sets icon font size */
+  border-radius: 50%; /* Makes the icon circular */
+  box-shadow: -2px -0px 18px hsl(var(--clr-light-gray)); /* Adds a shadow to the icon */
+}
+
+/* Category List Section */
+
+/* Styles for the category list with space between items */
+.category-list {
+  justify-content: space-between; /* Distributes items with space between */
+  align-items: center; /* Centers items vertically */
+  padding-inline: 1rem; /* Adds horizontal padding */
+  padding-bottom: 2rem; /* Adds padding to the bottom */
+}
+
+/* Styles for icons in the category list */
+.category-list > i {
+  font-size: 2rem; /* Sets font size to 2rem */
+  transform: rotate(0deg); /* Initial rotation of the icon */
+  transition: transform 0.3s ease-in-out; /* Smooth transition for rotation */
+}
+
+/* Rotates the icon 90 degrees when data-category attribute is true */
+.category-list > i[data-category="true"] {
+  transform: rotate(90deg); /* Rotates the icon 90 degrees */
+}
+
+/* Shop Category List Section */
+
+/* Prevents overflow in shop category list */
+.shop-category-list {
+  overflow-y: hidden; /* Hides vertical overflow */
+}
+
+/* Sidebar Navigation Section */
+
+/* Styles for sidebar navigation, initially off-screen */
+.sidebar-nav {
+  margin: 0; /* Removes margin */
+  padding: 0; /* Removes padding */
+  padding-inline: 2.5rem; /* Adds padding to the left and right */
+  list-style: none; /* Removes list bullets */
+  --grid-gap: 0.8rem; /* Sets grid gap to 0.8rem */
+  transform: translateY(-100%); /* Initially positions it off-screen */
+  transition: transform 0.3s ease-in-out; /* Smooth transition for the sidebar */
+}
+
+/* Moves the sidebar into view when data-category is true */
+.sidebar-nav[data-category="true"] {
+  transform: translateY(0); /* Resets position to show sidebar */
+}
+
+/* Styles for the links inside the sidebar navigation */
+.sidebar-nav > li > a {
+  text-decoration: none; /* Removes underline */
+  font-size: 1rem; /* Sets font size to 1rem */
+  transition: color 0.3s ease-in-out; /* Smooth transition for color change */
+}
+
+/* Changes color of links on hover */
+.sidebar-nav > li > a:hover {
+  color: hsl(var(--clr-red)); /* Changes link color to red on hover */
+}

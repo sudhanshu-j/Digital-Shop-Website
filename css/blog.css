@@ -1,0 +1,4 @@
+.blog {
+  margin-block: 5rem; /* Adds 5rem margin to the top and bottom of the blog section */
+  --grid-gap: 2rem; /* Defines a custom property (CSS variable) for the gap between grid items, set to 2rem */
+}

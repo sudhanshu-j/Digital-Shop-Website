@@ -1,0 +1,1910 @@
+:root {
+  /* color */
+  --clr-gray: 0 0% 86.3%; /* Light gray color in HSL (Hue, Saturation, Lightness) */
+  --clr-gray-light: 0 0% 93.3%; /* Lighter gray color in HSL */
+  --clr-red: 356.7 90.1% 56.5%; /* Red color in HSL */
+  --clr-black: 0 0% 21.2%; /* Black color in HSL */
+  --clr-yellow: 43.8 99% 58.8%; /* Yellow color in HSL */
+  --clr-very-light-gray: 300 2.7% 92.7%; /* Very light gray color in HSL */
+  --clr-green: 144.3 64.4% 49.6%; /* Green color in HSL */
+  --clr-blue: 214.5 100% 53.9%; /* Blue color in HSL */
+  --clr-white: 0 0% 100%; /* White color in HSL */
+
+  /* font-size */
+  --fs-bf-194: 12.3vw; /* Font size for very large text, relative to viewport width */
+  --fs-bf-109: 6.8125rem; /* Font size for large text */
+  --fs-bf-65: 4.065rem; /* Font size for medium-large text */
+  --fs-bf-80: 5rem; /* Font size for medium text */
+  --fs-bf-50: 3.125rem; /* Font size for smaller text */
+  --fs-bf-45: 2.8125rem; /* Font size for smaller text */
+  --fs-bf-30: 1.875rem; /* Font size for smaller text */
+  --fs-bf-20: 1.25rem; /* Font size for smaller text */
+  --fs-bf-16: 1rem; /* Font size for standard text */
+  --fs-bf-15: 0.9375rem; /* Font size for very small text */
+
+  /* font family */
+  --font-montserrat: "Montserrat", sans-serif; /* Font family for Montserrat */
+  --font-poppins: "Poppins", sans-serif; /* Font family for Poppins */
+}
+
+@media screen and (min-width: 35em) {
+  :root {
+    --fs-bf-194: 12.3vw;
+    --fs-bf-109: 6.8125rem;
+    --fs-bf-65: 4.065rem;
+    --fs-bf-80: 5rem;
+    --fs-bf-50: 3.125rem;
+    --fs-bf-45: 2.8125rem;
+    --fs-bf-30: 1.875rem;
+    --fs-bf-20: 1rem;
+    --fs-bf-16: 0.8rem;
+    --fs-bf-15: 0.8rem;
+  }
+}
+@media screen and (min-width: 35em) and (max-width: 59em) {
+  :root {
+    --fs-bf-194: 12.3vw;
+    --fs-bf-109: 6.8125rem;
+    --fs-bf-65: 4.065rem;
+    --fs-bf-80: 5rem;
+    --fs-bf-50: 3.125rem;
+    --fs-bf-45: 2.8125rem;
+    --fs-bf-30: 2.55rem;
+    --fs-bf-20: 1.25rem;
+    --fs-bf-16: 1rem;
+    --fs-bf-15: 0.8375rem;
+  }
+}
+
+@media screen and (min-width: 59em) {
+  :root {
+    --fs-bf-194: 12.3vw;
+    --fs-bf-109: 6.8125rem;
+    --fs-bf-65: 4.065rem;
+    --fs-bf-80: 5rem;
+    --fs-bf-50: 3.125rem;
+    --fs-bf-45: 2.8125rem;
+    --fs-bf-30: 1.875rem;
+    --fs-bf-20: 2rem;
+    --fs-bf-16: 1rem;
+    --fs-bf-15: 0.9375rem;
+  }
+}
+
+/* General Reset Styles */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0; /* Removes default margins for these elements */
+}
+
+ul[role="list"],
+li[role="list"] {
+  list-style: none; /* Removes default list styles */
+}
+
+html:focus-within {
+  scroll-behavior: smooth; /* Enables smooth scrolling when an element inside the body has focus */
+}
+
+body {
+  min-height: 100vh; /* Ensures the body takes up at least the full height of the viewport */
+  text-rendering: optimizeSpeed; /* Optimizes the text rendering for performance */
+  line-height: 1.5; /* Sets a default line height for text */
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto; /* Ensures better text decoration handling on links without classes */
+}
+
+img,
+picture {
+  max-width: 100%; /* Ensures images and pictures are responsive */
+  display: block; /* Prevents images from being inline elements */
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit; /* Inherits font styles from the parent element */
+}
+
+::-webkit-scrollbar {
+  display: none; /* Hides the scrollbar for webkit-based browsers (Chrome, Safari) */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto; /* Disables smooth scroll if the user prefers reduced motion */
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important; /* Disables animations for reduced motion preference */
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01s !important; /* Disables transitions for reduced motion preference */
+    scroll-behavior: auto !important; /* Disables scroll behavior */
+  }
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Background Color Classes */
+
+.bg-red {
+  background-color: hsl(var(--clr-red)); /* Background color set to red */
+}
+
+.bg-black {
+  background-color: hsl(var(--clr-black)); /* Background color set to black */
+}
+
+.bg-blue {
+  background-color: hsl(var(--clr-blue)); /* Background color set to blue */
+}
+
+.bg-gray {
+  background-color: hsl(var(--clr-gray)); /* Background color set to gray */
+}
+
+.bg-green {
+  background-color: hsl(var(--clr-green)); /* Background color set to green */
+}
+
+.bg-gray-light {
+  background-color: hsl(
+    var(--clr-gray-light)
+  ); /* Background color set to light gray */
+}
+
+.bg-very-light-gray {
+  background-color: hsl(
+    var(--clr-very-light-gray)
+  ); /* Background color set to very light gray */
+}
+
+.bg-white {
+  background-color: hsl(var(--clr-white)); /* Background color set to white */
+}
+
+.bg-yellow {
+  background-color: hsl(var(--clr-yellow)); /* Background color set to yellow */
+}
+
+/* Text Color Classes */
+
+.text-red {
+  color: hsl(var(--clr-red)); /* Text color set to red */
+}
+
+.text-black {
+  color: hsl(var(--clr-black)); /* Text color set to black */
+}
+
+.text-blue {
+  color: hsl(var(--clr-blue)); /* Text color set to blue */
+}
+
+.text-gray {
+  color: hsl(var(--clr-gray)); /* Text color set to gray */
+}
+
+.text-green {
+  color: hsl(var(--clr-green)); /* Text color set to green */
+}
+
+.text-gray-light {
+  color: hsl(var(--clr-gray-light)); /* Text color set to light gray */
+}
+
+.text-very-light-gray {
+  color: hsl(
+    var(--clr-very-light-gray)
+  ); /* Text color set to very light gray */
+}
+
+.text-white {
+  color: hsl(var(--clr-white)); /* Text color set to white */
+}
+
+.text-yellow {
+  color: hsl(var(--clr-yellow)); /* Text color set to yellow */
+}
+
+/* Font Size Classes */
+
+.fs-900 {
+  font-size: var(--fs-bf-194); /* Font size set to very large */
+}
+
+.fs-800 {
+  font-size: var(--fs-bf-109); /* Font size set to large */
+}
+
+.fs-700 {
+  font-size: var(--fs-bf-80); /* Font size set to medium-large */
+}
+
+.fs-600 {
+  font-size: var(--fs-bf-65); /* Font size set to medium */
+}
+
+.fs-500 {
+  font-size: var(--fs-bf-50); /* Font size set to slightly smaller */
+}
+
+.fs-400 {
+  font-size: var(--fs-bf-45); /* Font size set to small */
+}
+
+.fs-300 {
+  font-size: var(--fs-bf-30); /* Font size set to smaller */
+}
+
+.fs-200 {
+  font-size: var(--fs-bf-20); /* Font size set to even smaller */
+}
+
+.fs-100 {
+  font-size: var(--fs-bf-16); /* Font size set to standard text */
+}
+
+.fs-50 {
+  font-size: var(--fs-bf-15); /* Font size set to very small */
+}
+
+/* Font Weight Classes */
+
+.bold-100 {
+  font-weight: 100; /* Font weight set to very light */
+}
+
+.bold-200 {
+  font-weight: 200; /* Font weight set to light */
+}
+
+.bold-300 {
+  font-weight: 300; /* Font weight set to light-medium */
+}
+
+.bold-400 {
+  font-weight: 400; /* Font weight set to normal */
+}
+
+.bold-500 {
+  font-weight: 500; /* Font weight set to medium */
+}
+
+.bold-600 {
+  font-weight: 600; /* Font weight set to semi-bold */
+}
+
+.bold-700 {
+  font-weight: 700; /* Font weight set to bold */
+}
+
+.bold-800 {
+  font-weight: 800; /* Font weight set to extra-bold */
+}
+
+.bold-900 {
+  font-weight: 900; /* Font weight set to extra-bold */
+}
+
+.bold-bold {
+  font-weight: bold; /* Font weight set to bold */
+}
+
+.bold-bolder {
+  font-weight: bolder; /* Font weight set to bolder */
+}
+
+/* Font Family Styles */
+
+.fs-poppins {
+  font-family: "Poppins", sans-serif;
+  /* Applies Poppins font-family to elements with .fs-poppins class */
+}
+
+.fs-montserrat {
+  font-family: "Montserrat", sans-serif;
+  /* Applies Montserrat font-family to elements with .fs-montserrat class */
+}
+
+/* Component Classes */
+
+i {
+  cursor: pointer; /* Makes all <i> elements act like clickable buttons by changing cursor to pointer */
+}
+
+.flex {
+  display: flex; /* Applies Flexbox layout */
+  gap: var(
+    --flex-gap,
+    1rem
+  ); /* Sets the gap between flex items using a custom property (default to 1rem) */
+}
+
+.grid {
+  display: grid; /* Applies Grid layout */
+  gap: var(
+    --grid-gap,
+    1rem
+  ); /* Sets the gap between grid items using a custom property (default to 1rem) */
+}
+
+.container {
+  width: 96vw; /* Container width is 96% of the viewport width */
+  margin-inline: auto; /* Centers the container horizontally */
+  padding-inline: 2rem; /* Adds horizontal padding of 2rem */
+}
+
+/* Header Styles */
+/* Header */
+
+.primary-header {
+  justify-content: space-between; /* Distributes space between items in the header */
+  align-items: center; /* Vertically centers the items */
+  padding-block: 2rem; /* Adds vertical padding to the header */
+}
+
+.header-inner-one {
+  align-items: center; /* Vertically centers the elements inside the header-inner-one */
+}
+
+.logo {
+  margin-right: 2rem; /* Adds right margin to the logo */
+}
+
+.logo img {
+  width: 100%; /* Makes the image take up 100% of its container width */
+  object-fit: cover; /* Ensures the image covers the entire container, cropping if necessary */
+}
+
+.mobile-close-btn {
+  display: none; /* Hides the close button on mobile */
+}
+
+.primary-navigation {
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+  list-style: none; /* Removes bullet points from the list */
+  --flex-gap: 3rem; /* Sets the gap between navigation items */
+}
+
+.primary-navigation a {
+  color: hsl(var(--clr-black) / 0.6); /* Sets text color to a light black */
+  text-decoration: none; /* Removes underline from links */
+  cursor: pointer; /* Makes links behave like buttons */
+}
+
+.primary-navigation .active {
+  color: #000; /* Makes the active navigation item black */
+}
+
+.header-login {
+  justify-content: space-between; /* Distributes items in the header-login container */
+  align-items: center; /* Centers items vertically */
+  --flex-gap: 2rem; /* Sets gap between items */
+}
+
+.header-login .ri-shopping-bag-line {
+  font-size: 2rem; /* Increases the size of the shopping bag icon */
+  margin-top: -0.5rem; /* Adjusts the top margin */
+  position: relative; /* Positions the icon relative to its container */
+}
+
+.header-login .ri-shopping-bag-line::after {
+  content: "0"; /* Adds a badge with the number "0" */
+  width: 1rem; /* Sets width of the badge */
+  position: absolute; /* Positions the badge absolutely */
+  background-color: hsl(var(--clr-red)); /* Red background for the badge */
+  height: 1.2rem; /* Sets height of the badge */
+  margin-top: -3rem; /* Adjusts badge position */
+  margin-left: 1rem; /* Adds left margin */
+  border-radius: 0.3rem; /* Rounds the corners of the badge */
+  display: grid; /* Uses CSS Grid layout for the badge */
+  color: hsl(var(--clr-white)); /* White text color */
+  font-size: 1rem; /* Sets font size */
+  font-weight: 700; /* Sets font weight to bold */
+}
+
+.mobile-open-btn {
+  display: none; /* Hides the mobile open button */
+}
+
+.cart-icon {
+  position: absolute; /* Positions the cart icon absolutely within its container */
+  inset: 0% 30% 0% 0%; /* Positions the icon with offsets */
+  background-color: hsl(
+    var(--clr-very-light-gray)
+  ); /* Applies a very light gray background color */
+  transform: translateX(
+    -100%
+  ); /* Initially hides the cart icon by translating it off-screen */
+  transition: transform 0.3s ease-in-out; /* Smooth transition when the icon moves */
+  z-index: 1111; /* Positions the cart icon above other elements */
+}
+
+.cart-icon[data-visible="true"] {
+  transform: translateX(0); /* Moves the cart icon back into view */
+}
+
+.shopping {
+  padding: 2rem; /* Adds padding around the shopping section */
+  justify-content: space-between; /* Distributes space between shopping items */
+  align-items: center; /* Centers the items vertically */
+}
+
+.shopping > p {
+  font-size: var(
+    --fs-bf-20
+  ); /* Sets font size of the paragraph inside the shopping container */
+  font-family: var(
+    --font-montserrat
+  ); /* Applies Montserrat font to the paragraph */
+}
+
+.shopping > i {
+  font-size: 1.5rem; /* Increases the font size of the icon */
+  color: hsl(
+    var(--clr-black) / 0.6
+  ); /* Sets a light black color for the icon */
+  transition: transform 0.3s ease-in-out; /* Adds a smooth transition effect */
+}
+
+.shopping i:hover {
+  transform: rotate(90deg); /* Rotates the icon when hovered */
+}
+
+.cart {
+  flex-direction: column; /* Aligns items in the cart vertically */
+  justify-content: center; /* Centers cart items */
+  width: 100%; /* Makes the cart take up full width */
+  align-items: center; /* Centers items horizontally */
+  --flex-gap: 0.5rem; /* Sets a small gap between items */
+  font-family: var(--font-poppins); /* Applies Poppins font */
+  text-transform: uppercase; /* Transforms text to uppercase */
+  color: hsl(var(--clr-black) / 0.5); /* Sets a lighter black color */
+}
+
+.cart > i {
+  font-size: 5rem; /* Increases the size of the icon */
+  margin-bottom: -2rem; /* Adjusts the margin for better alignment */
+}
+
+/* Mobile View Styles (Below 35em screen width) */
+@media screen and (max-width: 35em) {
+  .primary-navigation {
+    position: fixed; /* Fixes the navigation to the top of the screen */
+    flex-direction: column; /* Stacks navigation links vertically */
+    justify-content: center; /* Centers navigation items */
+    align-items: center; /* Centers items horizontally */
+    z-index: 9999; /* Positions the navigation above other elements */
+    --flex-gap: 1.7rem; /* Increases the gap between navigation items */
+    inset: 0 0 0 0; /* Makes the navigation take up the full screen */
+    background-color: hsl(
+      var(--clr-gray-light) / 0.6
+    ); /* Applies a semi-transparent gray background */
+    padding: clamp(3rem, 30vh, 10rem) 0; /* Adds variable padding */
+    transform: translateY(
+      -100%
+    ); /* Initially hides the navigation off-screen */
+    transition: transform 0.3s ease-in-out; /* Smooth transition effect */
+  }
+
+  .primary-navigation[data-visible="true"] {
+    transform: translateY(0); /* Brings the navigation into view */
+  }
+
+  .primary-navigation a {
+    font-size: var(--fs-bf-30); /* Increases font size for mobile */
+  }
+
+  .header-login {
+    --flex-gap: 1.5rem;
+    margin-left: 4rem; /* Adjusts margin on login section */
+  }
+
+  .mobile-close-btn {
+    display: block; /* Makes the close button visible */
+    z-index: 88888; /* Positions the close button above other elements */
+    top: 5rem; /* Positions the close button 5rem from the top */
+    position: fixed; /* Fixes the button in place */
+    right: 12.5rem; /* Positions it on the right */
+    border: none; /* Removes the border */
+    outline: none; /* Removes the outline */
+    background: transparent; /* Transparent background */
+    font-size: 3rem; /* Large font size for close button */
+    cursor: pointer; /* Makes the button clickable */
+    transform: translateY(-300%); /* Initially hides the button */
+    transition: transform 0.3s ease-in-out; /* Smooth transition effect */
+  }
+
+  .mobile-close-btn[data-visible="true"] {
+    transform: translateY(0); /* Brings the close button into view */
+  }
+
+  .mobile-open-btn {
+    display: block; /* Displays the mobile open button */
+    font-size: 2rem; /* Sets font size */
+    cursor: pointer; /* Makes the button clickable */
+  }
+
+  .cart-icon {
+    z-index: 9999; /* Positions the cart icon above other elements */
+    position: fixed; /* Fixes the cart icon in place */
+  }
+}
+
+/* iPad View Styles (35em - 59em screen width) */
+@media screen and (min-width: 35em) and (max-width: 59em) {
+  .primary-navigation {
+    position: fixed; /* Fixed position for navigation */
+    flex-direction: column; /* Stacks the links vertically */
+    z-index: 9999; /* Ensures the navigation is above other content */
+    align-items: center; /* Centers the navigation items */
+    --flex-gap: 1.7rem; /* Sets a gap between the links */
+    inset: 0 0 0 0; /* Full-screen navigation */
+    background-color: hsl(
+      var(--clr-gray-light) / 0.6
+    ); /* Semi-transparent background */
+    padding: clamp(3rem, 30vh, 10rem) 0; /* Flexible padding */
+    transform: translateY(-100%); /* Hides navigation initially */
+    transition: transform 0.3s ease-in-out; /* Smooth transition effect */
+  }
+
+  .primary-navigation[data-visible="true"] {
+    transform: translateY(0); /* Brings navigation into view */
+  }
+
+  .primary-navigation a {
+    font-size: var(--fs-bf-30); /* Larger font size for navigation items */
+  }
+
+  .header-login {
+    --flex-gap: 1.5rem;
+    margin-left: 4rem; /* Adjusts the login section's positioning */
+  }
+
+  .mobile-close-btn {
+    display: block; /* Displays the close button */
+    z-index: 88888; /* Positions close button above elements */
+    top: 5rem; /* Positions the close button from the top */
+    position: fixed; /* Fixes the position of the close button */
+    right: 12.5rem; /* Aligns the button to the right */
+    border: none; /* Removes border */
+    outline: none; /* Removes outline */
+    background: transparent; /* Transparent background */
+    font-size: 3rem; /* Increases font size */
+    cursor: pointer; /* Makes it clickable */
+    transform: translateY(-300%); /* Hides the button initially */
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
+  }
+
+  .mobile-close-btn[data-visible="true"] {
+    transform: translateY(0); /* Brings the close button into view */
+  }
+
+  .mobile-open-btn {
+    display: block; /* Shows the open button */
+    font-size: 2rem; /* Font size of the open button */
+    cursor: pointer; /* Makes the button clickable */
+  }
+
+  .cart-icon {
+    z-index: 9999; /* Positions the cart icon above other content */
+    position: fixed; /* Fixes the cart icon in place */
+  }
+}
+
+/* Desktop View Styles (Above 59em screen width) */
+@media screen and (min-width: 59em) {
+  .cart-icon {
+    position: absolute; /* Absolute positioning of the cart icon */
+    inset: 10% 5% 50% 60%; /* Adjusts the cart icon's position */
+    border-radius: 1rem; /* Rounds the corners */
+    transform: translateX(150%); /* Initially hides the icon off-screen */
+    z-index: 222; /* Sets the cart icon's z-index */
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
+  }
+
+  .cart-icon[data-visible="true"] {
+    transform: translateX(0); /* Brings the cart icon into view */
+  }
+
+  .cart-icon .shopping {
+    display: none; /* Hides shopping details in cart icon */
+  }
+
+  .cart {
+    padding-top: 4rem; /* Adds padding to the top of the cart */
+  }
+}
+
+/* hero utils */
+
+/* Makes the element behave as a block-level element, occupying the full width available */
+.block {
+  display: block;
+}
+
+/* Transforms text to uppercase */
+.uppercase {
+  text-transform: uppercase;
+}
+
+/* Sets a default line-height for elements using this class. If no custom value is provided, it defaults to 3rem */
+.lineheight {
+  line-height: var(--line, 3rem);
+}
+
+/* Sets a default line-height for elements using this class. If no custom value is provided, it defaults to 4rem */
+.lineheight2 {
+  line-height: var(--line2, 4rem);
+}
+
+/* Styles for large buttons with padding, border radius, and transition for smooth hover effects */
+.large-btn {
+  border: none; /* Removes the border */
+  outline: none; /* Removes the outline when focused */
+  padding: 0.7rem 1rem; /* Adds padding inside the button */
+  border-radius: 2rem; /* Rounds the corners of the button */
+  cursor: pointer; /* Changes the cursor to a pointer on hover */
+  transition: transform 0.3s ease-in-out; /* Smooth transition for the transform effect on hover */
+  margin-top: 2rem; /* Adds top margin */
+}
+
+/* Hover state for the large button */
+.large-btn:hover {
+  background-color: hsl(
+    var(--clr-black)
+  ); /* Changes the background color on hover */
+  box-shadow: 3px 2px 37px -6px rgba(255, 255, 255, 0.7); /* Adds a light shadow around the button */
+}
+
+/* hero */
+
+/* Hero section styling */
+.hero-section {
+  width: 93vw; /* Sets the width to 93% of the viewport width */
+  margin-inline: auto; /* Centers the section horizontally */
+  padding-inline: 2rem; /* Adds horizontal padding inside the section */
+  background-color: hsl(
+    var(--clr-gray)
+  ); /* Sets the background color using a custom property */
+  border-radius: 2rem; /* Rounds the corners of the section */
+  padding-top: 5rem; /* Adds padding to the top of the section */
+}
+
+/* Styles for images inside the hero section */
+.hero-section > * img {
+  margin-top: -10rem; /* Moves the image upwards */
+  margin-left: 4rem; /* Moves the image to the left */
+}
+
+/* Flex container for hero inner content */
+.hero-inner {
+  justify-content: space-between; /* Aligns items with space between them */
+  align-items: center; /* Aligns items vertically to the center */
+  --flex-gap: 5rem; /* Custom property for gap between flex items */
+  margin-top: -3.5rem; /* Moves the inner content up */
+  padding-bottom: 4rem; /* Adds padding at the bottom */
+}
+
+/* Initially hides the hero info */
+.hero-info {
+  display: none;
+}
+
+/* Ipad (min-width: 35em, max-width: 59em) */
+
+/* Media query for iPad devices */
+@media screen and (min-width: 35em) and (max-width: 59em) {
+  /* Adjusts the hero section's width and padding for tablet screens */
+  .hero-section {
+    width: 95vw; /* Increases width to 95% of the viewport */
+    margin-inline: auto; /* Centers the section horizontally */
+    padding-inline: 4rem; /* Adds more padding on the left and right */
+    padding-top: 7rem; /* Increases the top padding */
+  }
+
+  /* Adjusts the image's margin for iPad */
+  .hero-section > * img {
+    margin-top: -10rem; /* Keeps image aligned vertically */
+    margin-left: 5rem; /* Moves the image more to the left */
+  }
+
+  /* Increases the line-height for the second class */
+  .lineheight2 {
+    --line2: 7rem; /* Sets a larger line height for the second line */
+  }
+}
+
+/* Desktop (min-width: 59em) */
+
+/* Media query for desktop screens */
+@media screen and (min-width: 59em) {
+  /* Adjusts the hero section's width, padding, and dynamic top padding */
+  .hero-section {
+    width: 95vw; /* Keeps the width at 95% of the viewport width */
+    margin-inline: auto; /* Centers the section horizontally */
+    padding-inline: 8rem; /* Increases padding on both sides */
+    padding-top: clamp(
+      4rem,
+      30vh,
+      15rem
+    ); /* Dynamically adjusts the top padding based on the viewport height */
+  }
+
+  /* Adjusts the image's margin for larger screens */
+  .hero-section > * img {
+    margin-top: -30rem; /* Moves the image significantly upwards */
+  }
+
+  /* Increases the line-height for the first line */
+  .lineheight {
+    --line: 4rem; /* Sets the line height to 4rem */
+  }
+
+  /* Increases the line-height for the second line */
+  .lineheight2 {
+    --line2: 13rem; /* Sets the line height to 13rem */
+  }
+
+  /* Displays the hero info on desktop and aligns it to the right */
+  .hero-info {
+    display: block; /* Makes the info visible */
+    text-align: end; /* Aligns the text to the right */
+    width: 25%; /* Sets the width to 25% */
+  }
+
+  /* Increases the font size of the big wireless text */
+  .big-wireless {
+    font-size: 5rem; /* Sets a large font size */
+  }
+
+  /* Adjusts the margin-top and bottom padding of the hero inner */
+  .hero-inner {
+    margin-top: -14rem; /* Moves the content further up */
+    padding-bottom: 8rem; /* Adds extra padding at the bottom */
+  }
+}
+
+/* Product */
+
+/* General styling for the product section */
+.product-section {
+  width: 93vw; /* Sets the width to 93% of the viewport width */
+  margin-inline: auto; /* Centers the section horizontally */
+}
+
+/* Styling for each product category */
+.category {
+  border-radius: 2rem; /* Rounds the corners */
+  grid-template-columns: repeat(2, 1fr); /* Creates a 2-column grid */
+  align-items: flex-end; /* Aligns items at the bottom */
+  padding: 7rem 4rem 2rem 4rem; /* Adds padding inside the category */
+  position: relative; /* Sets the position to relative for absolute positioning of child elements */
+  overflow: hidden; /* Hides overflowing content */
+  z-index: 777; /* Ensures the category is on top of other elements */
+  margin-block: 1rem; /* Adds vertical margin between categories */
+}
+
+/* Styling for product buttons */
+.product-btn {
+  margin-top: 1rem; /* Adds top margin */
+  padding-inline: 2rem; /* Adds horizontal padding */
+}
+
+/* Styles the earphone category with reduced opacity */
+.earphone {
+  color: hsl(var(--clr-white) / 0.2); /* Sets a semi-transparent white color */
+}
+
+/* Positions and sizes the first product image */
+.product-img-1 {
+  position: absolute; /* Uses absolute positioning */
+  top: -2.3rem; /* Moves the image upwards */
+  right: 3rem; /* Moves the image to the right */
+  z-index: -11; /* Sets the z-index to ensure it's behind other content */
+}
+
+/* Positions and sizes the second product image */
+.product-img-2 {
+  position: absolute;
+  top: 0.5rem; /* Moves the image slightly down */
+  right: -6rem; /* Moves the image to the right */
+}
+
+/* Positions and sizes the third product image */
+.product-img-3 {
+  position: absolute;
+  width: 80%; /* Reduces the width of the image */
+  right: -3.5rem; /* Moves the image to the right */
+  top: 2.5rem; /* Moves the image slightly down */
+}
+
+/* Positions and sizes the fourth product image */
+.product-img-4 {
+  position: absolute;
+  width: 50%; /* Reduces the width of the image */
+  right: 1rem; /* Moves the image slightly to the right */
+  top: 5rem; /* Moves the image down */
+}
+
+/* Positions and sizes the fifth product image */
+.product-img-5 {
+  position: absolute;
+  width: 100%; /* Sets the width to 100% */
+  right: -4rem; /* Moves the image to the right */
+  top: 1rem; /* Moves the image down slightly */
+  z-index: -1; /* Ensures the image is behind other content */
+}
+
+/* Positions and sizes the sixth product image */
+.product-img-6 {
+  position: absolute;
+  width: 70%; /* Reduces the width of the image */
+  right: -3rem; /* Moves the image to the right */
+  top: 5rem; /* Moves the image down */
+  z-index: -1; /* Ensures the image is behind other content */
+}
+
+/* Ipad View */
+
+/* Specifies custom grid areas for each product category */
+.category:nth-child(1) {
+  grid-area: one;
+}
+
+.category:nth-child(2) {
+  grid-area: two;
+}
+
+.category:nth-child(3) {
+  grid-area: three;
+}
+
+.category:nth-child(4) {
+  grid-area: four;
+}
+
+.category:nth-child(5) {
+  grid-area: five;
+}
+
+.category:nth-child(6) {
+  grid-area: six;
+}
+
+/* Media query for iPad devices */
+@media screen and (min-width: 35em) and (max-width: 59em) {
+  /* Sets up a grid layout for the product section with custom areas */
+  .product-section {
+    display: grid; /* Enables grid layout */
+    width: 95vw; /* Sets the width to 95% of the viewport width */
+    margin-inline: auto; /* Centers the section horizontally */
+    margin-block: 2rem; /* Adds vertical margin */
+    gap: 1.5rem; /* Sets gap between grid items */
+    grid-template-areas:
+      "one two"
+      "three three"
+      "six five"
+      "four four"; /* Defines custom grid layout */
+  }
+
+  /* Removes margin between categories */
+  .category {
+    margin-block: 0rem;
+  }
+
+  /* Adjusts image positions in the product section */
+  .product-img-3 {
+    width: 60%; /* Reduces the image width */
+    right: -1rem; /* Moves the image slightly to the right */
+    top: 1rem; /* Moves the image down slightly */
+  }
+
+  .product-img-4 {
+    width: 50%; /* Reduces the image width */
+    right: 1rem; /* Moves the image slightly to the right */
+    top: 1rem; /* Moves the image down slightly */
+  }
+
+  .product-img-5 {
+    width: 110%; /* Increases the image width */
+    top: 4.8rem; /* Moves the image down */
+  }
+}
+
+/* Desktop View */
+
+/* Media query for desktop screens */
+@media screen and (min-width: 59em) {
+  /* Sets up a grid layout for the product section with custom areas */
+  .product-section {
+    display: grid; /* Enables grid layout */
+    width: 95vw; /* Sets the width to 95% of the viewport width */
+    margin-inline: auto; /* Centers the section horizontally */
+    margin-block: 2rem; /* Adds vertical margin */
+    gap: 1.5rem; /* Sets gap between grid items */
+    grid-template-areas:
+      "one two three three"
+      "four four five six"; /* Defines custom grid layout */
+  }
+
+  /* Increases the font size of the "watch" class */
+  .watch {
+    font-size: 2.2rem; /* Sets a larger font size */
+  }
+
+  /* Adjusts the first product image's size and position */
+  .product-img-1 {
+    width: 150%; /* Increases the image width */
+    right: -10rem; /* Moves the image significantly to the right */
+    z-index: -11; /* Ensures the image is behind other content */
+  }
+
+  /* Adjusts the second product image's position */
+  .product-img-2 {
+    right: -14rem; /* Moves the image further to the right */
+  }
+
+  /* Adjusts the third product image's size and position */
+  .product-img-3 {
+    width: 70%; /* Reduces the width of the image */
+    right: -3.5rem; /* Moves the image to the right */
+    top: -0.5rem; /* Moves the image upwards */
+  }
+
+  /* Adjusts the fourth product image's size and position */
+  .product-img-4 {
+    width: 50%; /* Reduces the width of the image */
+    right: 1rem; /* Moves the image slightly to the right */
+    top: 1rem; /* Moves the image down slightly */
+  }
+
+  /* Adjusts the fifth product image's size and position */
+  .product-img-5 {
+    width: 120%; /* Increases the width of the image */
+    right: -4rem; /* Moves the image to the right */
+    top: 4rem; /* Moves the image down */
+    z-index: -1; /* Ensures the image is behind other content */
+  }
+
+  /* Adjusts the sixth product image's size and position */
+  .product-img-6 {
+    width: 100%; /* Sets the width to 100% */
+    right: -3rem; /* Moves the image to the right */
+    top: 2.5rem; /* Moves the image down */
+    z-index: -1; /* Ensures the image is behind other content */
+  }
+
+  /* Reduces line height for product section on desktop */
+  .product-section .lineheight {
+    --line: 3rem; /* Reduces the line height */
+  }
+
+  /* Reduces line height for product section on desktop */
+  .product-section .lineheight2 {
+    --line2: 3rem; /* Reduces the line height */
+  }
+}
+
+/* Service Section */
+
+/* Service section layout */
+.service-section {
+  width: 90vw; /* Set the width of the section to 90% of the viewport width */
+  margin-inline: auto; /* Centers the section horizontally */
+  margin-block: 2rem; /* Adds vertical margin */
+  display: grid; /* Uses grid layout */
+  gap: 1.5rem; /* Sets the gap between grid items */
+  grid-template-areas: /* Defines the grid layout areas for the service items */
+    "one two "
+    "three four ";
+}
+
+/* Styling for the first service item when it is the only child */
+.service:only-child(1) {
+  grid-area: one; /* Place the item in the "one" area of the grid */
+}
+
+/* Styling for the second service item when it is the only child */
+.service:only-child(2) {
+  grid-area: two; /* Place the item in the "two" area of the grid */
+}
+
+/* Styling for the third service item when it is the only child */
+.service:only-child(3) {
+  grid-area: three; /* Place the item in the "three" area of the grid */
+}
+
+/* Styling for the fourth service item when it is the only child */
+.service:only-child(4) {
+  grid-area: four; /* Place the item in the "four" area of the grid */
+}
+
+/* General styling for each service item */
+.service {
+  display: grid; /* Uses grid layout */
+  place-items: center; /* Centers content within the grid item */
+  text-align: center; /* Aligns the text to the center */
+  gap: 1rem; /* Adds a gap between elements inside the service item */
+}
+
+/* Font size class for larger text within service items */
+.service .fs-200 {
+  font-size: 0.85rem; /* Sets the font size to 0.85rem */
+}
+
+/* Font size class for smaller text within service items */
+.service .fs-50 {
+  font-size: 0.75rem; /* Sets the font size to 0.75rem */
+}
+
+/* Desktop styling */
+
+/* Media query for desktop view (min-width: 59em) */
+@media screen and (min-width: 59em) {
+  /* Adjusts the service section layout for larger screens */
+  .service-section {
+    width: 90vw; /* Keeps the width at 90% of the viewport width */
+    margin-inline: auto; /* Centers the section horizontally */
+    display: grid; /* Uses grid layout */
+    gap: 5rem; /* Increases the gap between grid items */
+    grid-template-areas: "one two three four"; /* All items in a single row */
+  }
+
+  /* Increases font size for larger screens */
+  .service .fs-200 {
+    font-size: 1rem; /* Increases font size to 1rem */
+  }
+
+  /* Increases font size for the smaller text */
+  .service .fs-50 {
+    font-size: 0.8rem; /* Increases font size to 0.8rem */
+  }
+}
+
+/* Feature Section */
+
+/* Styling for the feature section */
+.feature-section {
+  width: 90vw; /* Sets width to 90% of the viewport width */
+  margin-inline: auto; /* Centers the section horizontally */
+  border-radius: 2rem; /* Rounds the corners of the section */
+  position: relative; /* Allows positioning of child elements */
+  margin-top: 15rem; /* Adds top margin */
+  display: grid; /* Uses grid layout */
+  gap: 1rem; /* Adds a gap between grid items */
+  place-items: center; /* Centers content inside the grid */
+  text-align: center; /* Aligns text to the center */
+  padding-inline: 4rem; /* Adds horizontal padding */
+  padding: 8rem 2rem 2rem 2rem; /* Adds padding to all sides, top is larger */
+}
+
+/* Feature section images styling */
+.feature-section > * img {
+  margin-top: -15rem; /* Moves the image upwards */
+  position: absolute; /* Positions the image absolutely within the section */
+  right: -1.5rem; /* Moves the image to the right */
+}
+
+/* Feature info section */
+.feature-info {
+  padding-inline: 1rem; /* Adds horizontal padding */
+  margin-top: 1rem; /* Adds top margin */
+  z-index: 1; /* Ensures feature-info is above other elements */
+}
+
+/* Styling for buttons inside the feature section */
+.feature-info .product-btn {
+  margin-top: 2rem; /* Adds top margin */
+  padding-inline: 2rem; /* Adds horizontal padding */
+}
+
+/* Ipad View */
+
+/* Media query for iPad view (min-width: 35em and max-width: 59em) */
+@media screen and (min-width: 35em) and (max-width: 59em) {
+  /* Adjusts feature section layout for tablets */
+  .feature-section {
+    display: grid; /* Uses grid layout */
+    grid-template-columns: repeat(2, 1fr); /* Creates a 2-column grid */
+    gap: 8rem; /* Increases gap between items */
+    text-align: left; /* Aligns text to the left */
+    padding: 2rem 0rem; /* Reduces vertical padding */
+    page-break-inside: 7rem; /* Ensures proper page breaks */
+  }
+
+  /* Adjusts image position for tablet screens */
+  .feature-section > * img {
+    margin-top: -15rem; /* Keeps image aligned upwards */
+    right: -2rem; /* Moves image slightly to the right */
+    z-index: 1; /* Ensures image is above other elements */
+  }
+
+  /* Adjusts the date font size */
+  .date {
+    margin-top: 2rem; /* Adds top margin */
+    font-size: 1rem; /* Sets font size to 1rem */
+  }
+
+  /* Adjusts smile element visibility and position */
+  .smile {
+    display: block; /* Makes smile visible */
+    position: absolute; /* Positions it absolutely within its parent */
+    padding-bottom: 1rem; /* Adds padding at the bottom */
+  }
+
+  /* Adjusts line height for feature section */
+  .feature-section .lineheight2 {
+    line-height: 3rem; /* Sets line height to 3rem */
+  }
+}
+
+/* Desktop View */
+
+/* Media query for desktop screens (min-width: 59em) */
+@media screen and (min-width: 59em) {
+  /* Adjusts feature section layout for larger screens */
+  .feature-section {
+    width: 95vw; /* Sets width to 95% of the viewport width */
+    display: grid; /* Uses grid layout */
+    gap: 10rem; /* Increases gap between items */
+    z-index: 2; /* Ensures feature section appears above other elements */
+    grid-template-columns: repeat(2, 1fr); /* Creates a 2-column grid */
+    place-items: start; /* Aligns items to the start of the section */
+    text-align: left; /* Aligns text to the left */
+    padding: 4rem 7rem; /* Adds more padding to the left and right */
+  }
+
+  /* Adjusts image position for larger screens */
+  .feature-section > * img {
+    margin-top: -25rem; /* Moves the image upwards */
+    position: absolute; /* Positions the image absolutely */
+    right: 10rem; /* Moves the image to the right */
+    z-index: -1; /* Moves the image behind other content */
+    display: block; /* Makes the image block-level */
+  }
+
+  /* Makes smile visible */
+  .smile {
+    display: block; /* Ensures smile is visible */
+  }
+
+  /* Adjusts font size and line height */
+  .font-size {
+    font-size: 7rem; /* Sets font size to 7rem */
+    line-height: 5.5rem; /* Sets line height to 5.5rem */
+  }
+}
+
+/* Best Seller Section */
+
+/* Styling for the best product section */
+.best-product {
+  padding-block: 5rem; /* Adds vertical padding */
+  text-align: center; /* Aligns text to the center */
+}
+
+/* Styling for letter-spacing */
+.letter-spacing {
+  font-size: 2.5rem; /* Sets the font size to 2.5rem */
+}
+
+/* Styling for the best seller grid layout */
+.best-seller {
+  width: 90vw; /* Sets the width to 90% of the viewport width */
+  margin-inline: auto; /* Centers the section horizontally */
+  text-align: center; /* Aligns text to the center */
+  display: grid; /* Uses grid layout */
+  gap: 3rem; /* Adds gap between grid items */
+  grid-template-areas: /* Defines grid layout for best seller items */
+    "one"
+    "two"
+    "three"
+    "four"
+    "five"
+    "six"
+    "seven"
+    "eight";
+}
+
+/* Specific positioning for each best seller item */
+.best-seller:nth-child(1) {
+  grid-area: one; /* Places the first item in the "one" area */
+}
+
+.best-seller:nth-child(2) {
+  grid-area: two; /* Places the second item in the "two" area */
+}
+
+.best-seller:nth-child(3) {
+  grid-area: three; /* Places the third item in the "three" area */
+}
+
+.best-seller:nth-child(4) {
+  grid-area: four; /* Places the fourth item in the "four" area */
+}
+
+.best-seller:nth-child(5) {
+  grid-area: five; /* Places the fifth item in the "five" area */
+}
+
+.best-seller:nth-child(6) {
+  grid-area: six; /* Places the sixth item in the "six" area */
+}
+
+.best-seller:nth-child(7) {
+  grid-area: seven; /* Places the seventh item in the "seven" area */
+}
+
+.best-seller:nth-child(8) {
+  grid-area: eight; /* Places the eighth item in the "eight" area */
+}
+
+/* Styling for individual products */
+.product {
+  text-align: left; /* Aligns text to the left */
+  --gap-gap: 0.5rem; /* Sets a custom gap variable */
+  cursor: pointer; /* Changes the cursor to a pointer on hover */
+  position: relative; /* Allows positioning of child elements */
+  overflow-x: hidden; /* Hides overflow on the horizontal axis */
+}
+
+/* Hover effect for products */
+.product:hover {
+  color: hsl(var(--clr-red)); /* Changes color on hover */
+}
+
+/* Product details positioning and transition */
+.product-details {
+  position: absolute; /* Positions the details absolutely within the product */
+  height: 25%; /* Sets the height of the details */
+  place-items: center; /* Centers the content inside the details */
+  font-size: 1.5rem; /* Sets the font size to 1.5rem */
+  --grid-gap: -1rem; /* Defines a custom grid gap */
+  width: 10%; /* Sets the width to 10% */
+  right: 0; /* Aligns the details to the right */
+  top: 0; /* Aligns the details to the top */
+  border-radius: 0 0.5rem 0.5rem 0.5rem; /* Rounds the bottom corners */
+  transform: translateX(120%); /* Moves the details off-screen to the right */
+  transition: transform 0.3s ease-in-out; /* Adds a transition for sliding in */
+}
+
+/* Hover effect to slide in product details */
+.product:hover .product-details {
+  transform: translateX(0); /* Brings the details back into view */
+}
+
+/* Styling for product images */
+.product > img {
+  border-radius: 0.5rem; /* Rounds the corners of the product images */
+}
+
+/* Ipad View */
+
+/* Media query for iPad screens (min-width: 35em and max-width: 59em) */
+@media screen and (min-width: 35em) and (max-width: 59em) {
+  /* Adjusts the best seller grid layout for tablets */
+  .best-seller {
+    padding-block: 2rem; /* Reduces vertical padding */
+    grid-template-areas: /* Creates a 2-column layout for best sellers */
+      "one two"
+      "three four"
+      "five six"
+      "seven eight";
+  }
+}
+
+/* Desktop View */
+
+/* Media query for desktop screens (min-width: 59em) */
+@media screen and (min-width: 59em) {
+  /* Adjusts the best seller grid layout for larger screens */
+  .best-seller {
+    width: 95vw; /* Sets the width to 95% of the viewport width */
+    grid-template-areas: /* Creates a 2x4 grid layout for best sellers */
+      "one two three four"
+      "five six seven eight";
+    padding-block: 3rem; /* Adds vertical padding */
+  }
+}
+
+/* Featured Section 2 */
+
+/* Styling for images inside the second featured section */
+.feature-section-2 .feature-one img {
+  margin-top: -17rem; /* Moves the image upwards */
+  right: 3rem; /* Moves the image to the right */
+  width: 80%; /* Sets the width of the image to 80% */
+}
+
+/* Ipad View */
+
+/* Media query for iPad screens */
+@media screen and (min-width: 35em) and (max-width: 59em) {
+  /* Adjusts styling for feature section 2 images on tablets */
+  .feature-section-2 .feature-one img {
+    margin-top: -10rem; /* Moves the image upwards */
+    right: 13rem; /* Moves the image further to the right */
+    width: 60%; /* Decreases the image width to 60% */
+  }
+
+  /* Adjusts the z-index for font-size class */
+  .feature-section-2 .feature-one .font-size {
+    z-index: 2; /* Ensures the font size appears above other elements */
+  }
+}
+
+/* Desktop View */
+
+/* Media query for desktop screens */
+@media screen and (min-width: 59em) {
+  /* Adjusts styling for feature section 2 images on larger screens */
+  .feature-section-2 .feature-one img {
+    margin-top: -15rem; /* Moves the image upwards */
+    right: 30rem; /* Moves the image further to the right */
+    width: 50%; /* Decreases the image width to 50% */
+  }
+}
+/* News Section */
+
+/* Sets horizontal padding for elements with this class */
+.padding-inline {
+  padding-inline: 0.8rem; /* Adds 0.8rem padding to the left and right sides */
+}
+
+/* Styles for the recent news section */
+.recent-news {
+  width: 90vw; /* Sets the width to 90% of the viewport width */
+  margin-inline: auto; /* Centers the section horizontally */
+  --grid-gap: 1rem; /* Defines a custom CSS variable for grid gap */
+  padding-bottom: 2rem; /* Adds 2rem padding at the bottom */
+  grid-template-areas: /* Defines a single-column grid layout for smaller screens */
+    "one"
+    "two"
+    "three"
+    "four";
+}
+
+/* Positions the first recent news item in the grid */
+.recent-news:nth-child(1) {
+  grid-area: one; /* Places the first item in the "one" area */
+}
+
+/* Positions the second recent news item in the grid */
+.recent-news:nth-child(2) {
+  grid-area: two; /* Places the second item in the "two" area */
+}
+
+/* Positions the third recent news item in the grid */
+.recent-news:nth-child(3) {
+  grid-area: three; /* Places the third item in the "three" area */
+}
+
+/* Positions the fourth recent news item in the grid */
+.recent-news:nth-child(4) {
+  grid-area: four; /* Places the fourth item in the "four" area */
+}
+
+/* Adds top margin to the individual news items */
+.news {
+  margin-top: 2rem; /* Adds 2rem margin at the top of the news items */
+}
+
+/* Styles for images inside the news items */
+.news img {
+  border-radius: 2rem; /* Rounds the corners of the images */
+  cursor: pointer; /* Changes the cursor to a pointer on hover */
+  transition: transform 0.3s ease-in-out; /* Adds a smooth transition for image transformation */
+}
+
+/* Hover effect for images in the news section */
+.news img:hover {
+  box-shadow: 5px 5px 57px -6px hsl(var(--clr-black) / 0.5); /* Adds a shadow effect */
+  transform: scale(1.05); /* Scales the image slightly */
+  transition: transform 0.3s ease-in-out; /* Ensures smooth transition on hover */
+}
+
+/* Ipad View (min-width: 35em and max-width: 59em) */
+
+/* Media query for tablets */
+@media screen and (min-width: 35em) and (max-width: 59em) {
+  /* Adjusts the grid layout for the recent news section on tablets */
+  .recent-news {
+    grid-template-areas: /* Two-column layout for tablets */
+      "one two"
+      "three four";
+    padding-bottom: 3rem; /* Adds 3rem padding at the bottom */
+  }
+
+  /* Reduces the grid gap for news items on tablets */
+  .news {
+    --grid-gap: 0.6rem; /* Sets grid gap to 0.6rem */
+  }
+
+  /* Adjusts the font size of headings in news items */
+  .news h2 {
+    font-size: 1rem; /* Sets the font size to 1rem */
+  }
+
+  /* Adjusts the font size of paragraph text in news items */
+  .news p {
+    font-size: 0.6rem; /* Sets the font size to 0.6rem */
+  }
+
+  /* Adjusts the font size of the description text */
+  .news .desc {
+    font-size: 0.8rem; /* Sets the font size to 0.8rem */
+  }
+}
+
+/* Desktop View (min-width: 59em) */
+
+/* Media query for larger screens */
+@media screen and (min-width: 59em) {
+  /* Adjusts the grid layout for the recent news section on desktop */
+  .recent-news {
+    width: 95vw; /* Sets the width to 95% of the viewport width */
+    margin-inline: auto; /* Centers the section horizontally */
+    --grid-gap: 2rem; /* Increases the grid gap */
+    grid-template-areas: /* Defines a four-column layout for desktop */ "one two three four";
+    padding-bottom: 5rem; /* Adds 5rem padding at the bottom */
+  }
+
+  /* Adjusts the grid gap for news items on desktop */
+  .news {
+    --grid-gap: 0.8rem; /* Sets grid gap to 0.8rem */
+  }
+
+  /* Increases the font size of headings in news items */
+  .news h2 {
+    font-size: 1.2rem; /* Sets the font size to 1.2rem */
+  }
+
+  /* Adjusts the font size of paragraph text in news items */
+  .news p {
+    font-size: 0.7rem; /* Sets the font size to 0.7rem */
+    padding-right: 3rem; /* Adds 3rem padding to the right side */
+  }
+
+  /* Keeps the font size of the description text */
+  .news .desc {
+    font-size: 0.8rem; /* Sets the font size to 0.8rem */
+  }
+}
+
+/* Brands Section */
+
+/* Styles for the brands section */
+.brands {
+  place-items: center; /* Centers the items within the grid */
+  --grid-gap: 4rem; /* Sets the grid gap to 4rem */
+  padding-block: 6rem; /* Adds 6rem vertical padding */
+  margin-block: 2rem; /* Adds 2rem vertical margin */
+  background-color: hsl(var(--clr-gray)); /* Sets the background color */
+  grid-template-areas: /* Defines a single-column grid layout */
+    "one"
+    "two"
+    "three"
+    "four"
+    "five";
+}
+
+/* Positions the first brand item in the grid */
+.brands:nth-child(1) {
+  grid-area: one; /* Places the first item in the "one" area */
+}
+
+/* Positions the second brand item in the grid */
+.brands:nth-child(2) {
+  grid-area: two; /* Places the second item in the "two" area */
+}
+
+/* Positions the third brand item in the grid */
+.brands:nth-child(3) {
+  grid-area: three; /* Places the third item in the "three" area */
+}
+
+/* Positions the fourth brand item in the grid */
+.brands:nth-child(4) {
+  grid-area: four; /* Places the fourth item in the "four" area */
+}
+
+/* Positions the fifth brand item in the grid */
+.brands:nth-child(5) {
+  grid-area: five; /* Places the fifth item in the "five" area */
+}
+
+/* Styles for the brand images */
+.brands > * img {
+  opacity: 0.2; /* Sets the initial opacity to 0.2 */
+  transition: opacity 0.3s ease-in-out; /* Adds a smooth transition for opacity */
+  cursor: pointer; /* Changes the cursor to a pointer on hover */
+}
+
+/* Hover effect for brand images */
+.brands > * img:hover {
+  opacity: 1; /* Increases opacity to 1 on hover */
+}
+
+/* Ipad View */
+
+/* Media query for tablet screens */
+@media screen and (min-width: 35em) and (max-width: 59em) {
+  /* Adjusts the grid layout for the brands section on tablets */
+  .brands {
+    grid-template-areas: /* Defines a two-column layout for brands on tablets */
+      "one two"
+      "three four";
+  }
+}
+
+/* Desktop View */
+
+/* Media query for larger screens */
+@media screen and (min-width: 59em) {
+  /* Adjusts the grid layout for the brands section on desktop */
+  .brands {
+    grid-template-areas: /* Defines a five-column layout for brands on desktop */ "one two three four five";
+  }
+}
+
+/* Footer Section */
+
+/* Styles for the footer section */
+.footer {
+  margin-block: 5rem; /* Adds 5rem vertical margin */
+  width: 85vw; /* Sets the width to 85% of the viewport width */
+  margin-inline: auto; /* Centers the section horizontally */
+  grid-template-columns: auto; /* Sets a single column layout */
+  --grid-gap: 1.5rem; /* Sets the grid gap to 1.5rem */
+  grid-template-areas: /* Defines a single-column grid layout for footer sections */
+    "one"
+    "two"
+    "three"
+    "four";
+}
+
+/* Positions the first footer item in the grid */
+.footer:nth-child(1) {
+  grid-area: one; /* Places the first item in the "one" area */
+}
+
+/* Positions the second footer item in the grid */
+.footer:nth-child(2) {
+  grid-area: two; /* Places the second item in the "two" area */
+}
+
+/* Positions the third footer item in the grid */
+.footer:nth-child(3) {
+  grid-area: three; /* Places the third item in the "three" area */
+}
+
+/* Positions the fourth footer item in the grid */
+.footer:nth-child(4) {
+  grid-area: four; /* Places the fourth item in the "four" area */
+}
+
+/* Styles for the footer logo section */
+.footer-logo {
+  --grid-gap: 2rem; /* Sets the grid gap for the footer logo */
+}
+
+/* Styles for the paragraph inside the footer logo */
+.footer-logo > p {
+  width: 60%; /* Sets the width of the paragraph to 60% */
+}
+
+/* Styles for the social icons inside the footer logo */
+.footer-logo .social {
+  --flex-gap: 1.5rem; /* Sets the gap between social icons */
+  font-size: 2rem; /* Sets the font size to 2rem */
+}
+
+/* Styles for individual social media links */
+.footer-logo .social a {
+  color: hsl(var(--clr-black)); /* Sets the default color to black */
+  cursor: pointer; /* Changes the cursor to a pointer on hover */
+  text-decoration: none; /* Removes underline from links */
+}
+
+/* Hover effect for Facebook icon */
+.footer-logo .social a:hover .ri-facebook-box-fill {
+  color: hsl(var(--clr-blue)); /* Changes the color to blue on hover */
+  transition: color 0.5s; /* Smooth transition for the color change */
+}
+
+/* Hover effect for Instagram icon */
+.footer-logo .social a:hover .ri-instagram-fill {
+  color: #c13584; /* Changes the color to Instagram's brand color */
+  transition: color 0.5s; /* Smooth transition for the color change */
+}
+
+/* Hover effect for YouTube icon */
+.footer-logo .social a:hover .ri-youtube-fill {
+  color: hsl(var(--clr-red)); /* Changes the color to YouTube's brand color */
+  transition: color 0.5s; /* Smooth transition for the color change */
+}
+
+/* Hover effect for Twitter icon */
+.footer-logo .social a:hover .ri-twitter-x-fill {
+  color: hsl(var(--clr-gray)); /* Changes the color to gray on hover */
+  transition: color 0.5s; /* Smooth transition for the color change */
+}
+
+/* Styles for the footer menu and contact sections */
+.footer-menu > ul,
+.contact > ul {
+  margin: 0; /* Removes margin from the list */
+  padding: 0; /* Removes padding from the list */
+  list-style-type: none; /* Removes bullet points */
+}
+
+/* Styles for list items inside footer menu and contact */
+.footer-menu > ul > li,
+.contact > ul > li {
+  margin-top: 0.5rem; /* Adds top margin to each list item */
+}
+
+/* Styles for links inside footer menu and contact */
+.footer-menu > ul > li > a,
+.contact > ul > li > a {
+  text-decoration: none; /* Removes underline from links */
+  transition: color 0.3s ease-in-out; /* Smooth transition for color change */
+}
+
+/* Hover effect for links in footer menu */
+.footer-menu > ul > li > a:hover {
+  color: hsl(var(--clr-red)); /* Changes the color to red on hover */
+}
+
+/* Hover effect for links in contact section */
+.contact > ul > li > a:hover {
+  color: hsl(var(--clr-blue)); /* Changes the color to blue on hover */
+}
+
+/* Styles for the contact section */
+.footer .contact > p {
+  width: 60%; /* Sets the width of the paragraph inside the contact section */
+}
+
+/* Styles for input fields in the footer */
+.inputField {
+  padding: 0.5rem; /* Adds padding inside the input field */
+  border-radius: 4rem; /* Rounds the corners of the input field */
+}
+
+/* Styles for buttons inside input fields */
+.inputField > button {
+  border: 0; /* Removes border from the button */
+  padding: 0.7rem 1.5rem; /* Adds padding to the button */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+  border-radius: 3rem; /* Rounds the corners of the button */
+}
+
+/* Styles for email input field */
+.inputField input {
+  border: 0; /* Removes the border */
+  width: 60%; /* Sets the width to 60% */
+  border-radius: 4rem; /* Rounds the corners of the input field */
+}
+
+/* Removes outline on focus/hover for email input */
+.inputField input:hover,
+.inputField input:focus {
+  outline: none; /* Removes outline when input is focused or hovered */
+}
+
+/* Styles for email input field */
+.inputField input[type="email"] {
+  margin-left: 2rem; /* Adds left margin for email input */
+}
+
+/* Styles for the updates text */
+.updates {
+  font-size: 0.8rem; /* Sets the font size to 0.8rem */
+}
+
+/* ipad */
+
+/* Media query for screens between 35em and 59em (tablets) */
+@media screen and (min-width: 35em) and (max-width: 59em) {
+  /* Adjusts the footer layout for tablets */
+  .footer {
+    --grid-gap: 0.5rem; /* Sets a smaller grid gap for footer items */
+    grid-template-columns: auto; /* Uses a single column layout for the footer */
+    grid-template-areas: /* Adjusts the grid layout to two columns for the footer */
+      "one two"
+      "three four";
+  }
+
+  /* Adjusts the font size for paragraph text inside footer logo */
+  .footer-logo > p {
+    font-size: 1rem; /* Sets font size to 1rem for the footer paragraph */
+  }
+
+  /* Adjusts the style of the social media icons in the footer logo */
+  .footer-logo .social {
+    --flex-gap: 1.5rem; /* Sets the gap between social icons to 1.5rem */
+    margin-bottom: 1rem; /* Adds a bottom margin to social media icons */
+  }
+
+  /* Adjusts the spacing between footer menu and contact list items */
+  .footer-menu > ul > li,
+  .contact > ul > li {
+    margin-top: 0.1rem; /* Sets a small margin-top for list items */
+  }
+
+  /* Adjusts the font size of links in footer menu and contact */
+  .footer-menu > ul > li > a,
+  .contact > ul > li > a {
+    font-size: 1rem; /* Sets font size to 1rem for footer menu and contact links */
+  }
+
+  /* Adjusts the font size of the updates section */
+  .updates {
+    font-size: 1rem; /* Sets font size to 1rem for updates text */
+  }
+
+  /* Adjusts the style of the email input field inside the footer */
+  .inputField input {
+    border: 0; /* Removes border */
+    width: 50%; /* Sets the width of the input field to 50% */
+  }
+
+  /* Adjusts the left margin of the email input field */
+  .inputField input[type="email"] {
+    margin-left: 1rem; /* Adds 1rem left margin to email input field */
+  }
+}
+
+/* Desktop */
+
+/* Media query for screens 59em and larger (desktop) */
+@media screen and (min-width: 59em) {
+  /* Adjusts the footer layout for desktop */
+  .footer {
+    width: 95vw; /* Sets footer width to 95% of viewport width */
+    margin-top: 6rem; /* Adds 6rem margin at the top of the footer */
+    --grid-gap: 2rem; /* Increases the grid gap for footer items */
+    grid-template-columns: auto; /* Uses a single column layout for the footer */
+    grid-template-areas: "one two three four"; /* Adjusts the grid layout for four columns */
+  }
+
+  /* Adjusts the font size and width for the paragraph inside the footer logo */
+  .footer-logo > p {
+    font-size: 1rem; /* Sets font size to 1rem */
+    width: 80%; /* Sets the width of the footer paragraph to 80% */
+  }
+
+  /* Adjusts the font size for social icons inside the footer */
+  .footer-logo .social {
+    font-size: 2rem; /* Increases the font size of social media icons */
+  }
+
+  /* Adjusts the font size for footer menu heading */
+  .footer-menu > h3 {
+    font-size: 1rem; /* Sets font size to 1rem for footer menu heading */
+  }
+
+  /* Adjusts the font size for links in footer menu and contact sections */
+  .footer-menu a,
+  .contact a {
+    font-size: 1rem; /* Sets font size to 1rem for footer menu and contact links */
+  }
+
+  /* Adjusts the font size for the contact section heading */
+  .contact > h3 {
+    font-size: 1rem; /* Sets font size to 1rem for contact section heading */
+  }
+
+  /* Adjusts the font size for the email section heading */
+  .email > h3 {
+    font-size: 1rem; /* Sets font size to 1rem for email section heading */
+  }
+
+  /* Adjusts the font size for the updates section on desktop */
+  .updates {
+    font-size: 1.3rem; /* Sets font size to 1.3rem for updates text */
+  }
+}
+
+/* Copyright Section */
+
+/* Styles for centering text */
+.text-align {
+  text-align: center; /* Centers the text */
+}
+
+/* Styles for top padding in the copyright section */
+.p-top {
+  padding: 1rem 0; /* Adds 1rem top and bottom padding */
+}
+
+/* Styles for the copyright section */
+.copyright {
+  margin-top: 5rem; /* Adds 5rem margin at the top */
+  padding: 1rem 2rem; /* Adds 1rem top and bottom padding, 2rem left and right padding */
+  margin-inline: auto; /* Centers the copyright section horizontally */
+  background-color: hsl(var(--clr-black)); /* Sets background color to black */
+  color: hsl(
+    var(--clr-white) / 0.5
+  ); /* Sets text color to a semi-transparent white */
+}
+
+/* Styles for links inside the copyright section */
+.copyright .p-top a {
+  color: hsl(
+    var(--clr-white) / 0.5
+  ); /* Sets default link color to semi-transparent white */
+  text-decoration: none; /* Removes underline from links */
+  transition: color 0.3s ease-in-out; /* Adds smooth color transition for hover */
+}
+
+/* Hover effect for links in the copyright section */
+.copyright .p-top a:hover {
+  color: hsl(var(--clr-red)); /* Changes color to red on hover */
+}
+
+/* Sets font size for small text in copyright section */
+.c-font,
+.p-top {
+  font-size: 0.8rem; /* Sets font size to 0.8rem */
+}
+
+/* Ipad */
+
+/* Media query for screens between 35em and 59em (tablets) */
+@media screen and (min-width: 35em) and (max-width: 59em) {
+  /* Adjusts layout of the copyright section for tablets */
+  .copyright {
+    display: flex; /* Uses a flexbox layout for the copyright section */
+    justify-content: space-between; /* Distributes space between elements */
+    align-items: center; /* Vertically centers the items */
+  }
+
+  /* Increases font size of small text for tablets */
+  .c-font {
+    font-size: 1rem; /* Sets font size to 1rem */
+  }
+}
+
+/* Desktop */
+
+/* Media query for screens 59em and larger (desktop) */
+@media screen and (min-width: 59em) {
+  /* Adjusts layout of the copyright section for desktop */
+  .copyright {
+    display: flex; /* Uses a flexbox layout for the copyright section */
+    justify-content: space-between; /* Distributes space between elements */
+    align-items: center; /* Vertically centers the items */
+  }
+
+  /* Increases font size of small text for desktop */
+  .c-font {
+    font-size: 1rem; /* Sets font size to 1rem */
+  }
+}
