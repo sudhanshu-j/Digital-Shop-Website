@@ -221,4 +221,4 @@ We welcome contributions to this project! If you'd like to contribute, please fo
 
 ### Demo
 
-You can view a live demo of the website [here](#). Alternatively, you can download the files and run them locally following the instructions above.
+You can view a live demo of the website [here](https://digitalshopwebsite.netlify.app/). Alternatively, you can download the files and run them locally following the instructions above.
